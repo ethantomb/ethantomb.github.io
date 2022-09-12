@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRKBFGL3RS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FRKBFGL3RS');
+    </script>
+    <title>Han75: Homepage</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./scripts/game.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <ul class="navbar" style="top:0px;">
+        <li class="nav_left"><a href="projects.html">My Projects</a></li>
+        <li class="nav_left"><a href="https://github.com/ethantomb" target="_blank">My Github</a></li>
+        <li class="nav_right"><a>About Me</a></li>
+    </ul>
+    <h1>About Me</h1>
+    <p>Hello! I'm Ethan, a Computer Science Engineering major at OSU!</p>
+    <p>This website will serve as a personal portfolio for my side projects. I'm hoping to update this site as I
+        continue to grow my skills.</p>
+    <p>You can check out my work at the "My Projects" link above, or you can play tic-tac-toe down below.</p>
+    <div class="game">
+        <div class="gameBoard">
+            <canvas id="tttBoard" width="0" height="0"></canvas>
+        </div>
+        <div class="Control">
+            <h3 id="game_status"></h3>
+            <label class="RadioLabel">Play X</label>
+            <input type="radio" name="player" value="X" checked>
+            <label class="RadioLabel">Play O</label>
+            <input type="radio" name="player" value="O"> <br>
+            <button id="reset" onclick="reset()" enabled="true">Start!</button>
+        </div>
+    </div>
+    <br><br>
+
+</body>
+
+</html>

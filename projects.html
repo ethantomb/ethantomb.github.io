@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRKBFGL3RS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FRKBFGL3RS');
+    </script>
+    <title>My Projects</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
+        integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://threejs.org/examples/jsm/controls/OrbitControls.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <ul class="navbar" style="top:0px;">
+        <li class="nav_left"><a href="index.html">About Me</a></li>
+        <li class="nav_left"><a href="https://github.com/ethantomb" target="_blank">My Github</a></li>
+        <li class="nav_right"><a>My Projects</a></li>
+    </ul>
+    <h1>My Projects</h1>
+    <p>Here are some of my projects that I've worked on. I'll be adding more as I continue to work on them.</p>
+
+    <ul class="projects">
+        <li><a href="https://ethantomb.github.io/collapse" target="_blank">Collapse - A Wave Function Collapse Algorithm</a>
+        </li>
+        <li><a href="https://ethantomb.github.io/ValorantData" target="_blank">ValoTracker - Valorant Stats Tracker</a></li>
+        <li><a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4 - Man Vs Machine</a></li>
+        <li><a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1">Engineering Honors Robotics Project</a></li>
+    </ul>
+    <p>This is a model of a robot I built for a freshman engineering honors course. I coded the robot in C++, and with
+        the help of my 3 teammates, we designed and built it.</p>
+    <p>We ended up placing top 16 in the final competition. A model of the robot is below.</p>
+    <p style="font-weight:bold;">Mobile Users: Tap the screen below if the model doesnt load. Use 1 finger to pan, 2
+        fingers to drag, pinch to zoom</p>
+    <p style="font-weight:bold;">Desktop Users: If the model runs slowly, go to chrome://settings, search "Use Hardware
+        Acceleration" and turn it on. Left click to pan, Right click to drag, and use the scroll wheel to zoom.</p>
+    <br><br>
+    <script type="module" src="./scripts/3d.js"></script>
+</body>
+
+</html>
