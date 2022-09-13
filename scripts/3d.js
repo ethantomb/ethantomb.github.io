@@ -17,7 +17,7 @@ scene.add(light);
 const light2 = new THREE.PointLight(0xffffff, 1, 1000);
 light2.position.set(5, 0, 5);
 scene.add(light2);
-document.body.appendChild(renderer.domElement);
+document.getElementById("model").appendChild(renderer.domElement);
 var model;
 loader.load('./assets/robotModel/SCRAP-E Model.gltf', function (gltf) {
     gltf.scene.scale.set(10, 10, 10);
