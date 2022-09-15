@@ -36,7 +36,7 @@ body{
     display:flex;
     flex-direction: row;
     list-style-type: none;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -44,19 +44,21 @@ body{
 .navbar>ul>li a{
     display: inline-block;
     color: #ffffff;
-    text-align: justify;
-    height: 50px;
-    padding: 10px 40px;
+    text-align: center;
+
+    height: 45px;
+    padding: 10px 35px;
     text-decoration: none;
 }
 .navImg {
     margin:0;
-    height: 50px;
+    height: 45px;
     width: auto;
 }
 .nav_element{
     padding: auto;
-    float:left;
+    
+
     border: 2px solid #fefefe;
     border-radius: 5px;
     background-color: #3b3a3a;
