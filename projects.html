@@ -27,20 +27,25 @@
 <body>
     <nav class="navbar" style="top:0px;">
         <ul>
-        <li class="nav_element"><a href="index.html">About Me</a></li>
-        <li class="nav_element"><a href="https://github.com/ethantomb" target="_blank"><img class="navImg"src="assets/img/GitHub.png" alt="GitHub"></a></li>
-        <li class="nav_element"><a href="https://www.linkedin.com/in/ethan-tomb/" target="_blank"><img class="navImg" src="assets/img/Linkedin.png" alt="linkedin"></a></li>
-    </ul>
+            <li class="nav_element"><a href="index.html">About Me</a></li>
+            <li class="nav_element"><a href="https://github.com/ethantomb" target="_blank"><img class="navImg"
+                        src="assets/img/GitHub.png" alt="GitHub"></a></li>
+            <li class="nav_element"><a href="https://www.linkedin.com/in/ethan-tomb/" target="_blank"><img
+                        class="navImg" src="assets/img/Linkedin.png" alt="linkedin"></a></li>
+        </ul>
     </nav>
     <h1>My Projects</h1>
     <p>Here are some of my projects that I've worked on. I'll be adding more as I continue to work on them.</p>
 
     <ul class="projects">
-        <li><a href="https://ethantomb.github.io/collapse" target="_blank">Collapse - A Wave Function Collapse Algorithm</a>
+        <li><a href="https://ethantomb.github.io/collapse" target="_blank">Collapse - A Wave Function Collapse
+                Algorithm</a>
         </li>
-        <li><a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker - Valorant Stats Tracker</a></li>
+        <li><a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker - Valorant Stats Tracker</a>
+        </li>
         <li><a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4 - Man Vs Machine</a></li>
-        <li><a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1">Engineering Honors Robotics Project</a></li>
+        <li><a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1">Engineering Honors Robotics Project</a>
+        </li>
     </ul>
     <p>This is a model of a robot I built for a freshman engineering honors course. I coded the robot in C++, and with
         the help of my 3 teammates, we designed and built it.</p>
@@ -48,15 +53,31 @@
     <p style="font-weight:bold;">Mobile Users: Tap the screen below if the model doesnt load. Use 1 finger to pan, 2
         fingers to drag, pinch to zoom</p>
     <p style="font-weight:bold;">Desktop Users: If the model runs slowly, go to chrome://settings, search "Use Hardware
-        Acceleration" and turn it on. Left click to pan, Right click to drag, and use the scroll wheel to zoom. This embed was added using three.js</p>
+        Acceleration" and turn it on. Left click to pan, Right click to drag, and use the scroll wheel to zoom. This
+        embed was added using three.js</p>
     <br><br>
+
+    <span id="closeModel" onclick="closeModel()">Click to Close Model</span>
+    
     <div id="model-container">
-        
-        <div id="model"></div>
-        
+        <h1 id="SCRAP-E">SCRAP-E</h1>
+        <div id="model">
+            
+        </div>
+
     </div>
     
+    <script type="text/javascript">
+        function closeModel() {
+            let modelClosed = document.getElementById("model-container").style.display == "none";
+
+            document.getElementById("model-container").style.display = (modelClosed ? "flex" : "none");
+            document.getElementById("closeModel").style.backgroundColor = (modelClosed ? "#870000" : "#015603");
+            document.getElementById("closeModel").innerHTML = (modelClosed ? "Click to Close Model" : "Click to Open Model");
+        }
+    </script>
     <script type="module" src="./scripts/3d.js"></script>
+
 </body>
 
 </html>

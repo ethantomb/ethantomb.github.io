@@ -8,7 +8,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight*0.75);
 //Add light to the scene
 const light = new THREE.PointLight(0xffffff, 1, 1000);
 light.position.set(0, 0, 0);
@@ -38,10 +38,21 @@ loader.load('./assets/robotModel/SCRAP-E Model.gltf', function (gltf) {
 camera.position.y = 5;
 camera.position.z = 10;
 const controls = new OrbitControls(camera, renderer.domElement);
+function resizeModelToContainer() {
+    const canvas = renderer.domElement;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    if (canvas.width !== width || canvas.height !== height) {
+        renderer.setSize(width, height, false);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    }
+}
 function animate() {
     requestAnimationFrame(animate);
-
+    resizeModelToContainer();
     controls.update();
     renderer.render(scene, camera);
 }
+
 animate();

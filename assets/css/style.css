@@ -20,14 +20,32 @@ body{
 }
 #model-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     
-    background-color: #979393;
+    
     width: 100%;
     max-width: 100%;
-    height: 500px auto;
+   
 }
+#model{
+    width: 100%;
+    max-width: 100%;
+    
+    
+    margin: 0 auto;
+    background-color: #979393;
 
+}
+#SCRAP-E{
+    padding: 10px;
+    height: 0.1vh;
+}
+#closeModel{
+    background-color: #870000;
+    display: block;
+    text-align: center;
+}
 .navbar{
     height:65px;
 }
