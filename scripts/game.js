@@ -25,7 +25,7 @@ class Board {
         document.getElementById("tttBoard").height = this.height;
         var c = document.getElementById("tttBoard");
         var ctx = c.getContext("2d");
-        ctx.fillStlye = "black";
+        ctx.fillStlye = "white";
         ctx.fillRect(0, 0, this.width, this.height);
         ctx.fillStyle = "white";
         ctx.fillRect((this.width / 3) - 20, 0, 20, this.height);

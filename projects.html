@@ -35,30 +35,85 @@
         </ul>
     </nav>
     <h1>My Projects</h1>
-    <p>Here are some of my projects that I've worked on. I'll be adding more as I continue to work on them.</p>
+    <p>These are some personal projects that I have worked on! They are all works-in-progress, and I will continue to update and improve them as I continue to learn.
+        
+    </p>
 
     <ul class="projects">
-        <li><a href="https://ethantomb.github.io/collapse" target="_blank">Collapse - A Wave Function Collapse
-                Algorithm(Website)</a>
+        <li><div class="project">
+            <a href="https://ethantomb.github.io/collapse" target="_blank">Winding Roads</a>
+            <p>
+                <b>Language: JavaScript</b><br>
+                <b>Alt Link:</b><a href="https://ethantomb.github.io/collapse"target="_blank">https://ethantomb.github.io/collapse</a><br>
+                Winding Roads is a canvas generator. It uses a wave-function collapse algorithm to graph a set of 6 road pieces
+                onto an nxm grid, such that every road vertex is connected to another road vertex and every grass vertex is connected 
+                to another grass vertex. The end result is a complete image that looks aestetically pleasing (at least, I think so) 
+                and logically fits together like a puzzle.
+            </p>
+        </div>
         </li>
-        <li><a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker - Valorant Stats Tracker(Website)</a>
+        <li><div class="project">
+            <a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker</a>
+            <p>
+                <b>Language: JavaScript</b><br>
+                <b>Alt Link: </b><a href="https://ethantomb.github.io/valotracker"target="_blank">https://ethantomb.github.io/valotracker</a><br>
+                ValoTracker is a Valorant player lookup tool. This uses HenrikDev's unofficial Valorant API. Check him out at 
+                <a href="https://docs.henrikdev.xyz/">https://docs.henrikdev.xyz/</a>. He's an amazing developer. So far, my website works 
+                on every server region and every player.
+            </p>
+        
+        </div>
+            </li>
+        <li>
+            <div class="project">
+               <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
+                <p>
+                    <b>Language: JavaScript,C++(Compiled to WASM)</b><br>
+                    <b>Alt Link: </b><a href="https://ethantomb.github.io/connect4"target="_blank">https://ethantomb.github.io/connect4</a><br>
+                    This is a Human-VS-AI Connect 4 game. It uses a minimax algorithm with alpha beta pruning to search for the best move. 
+                    I wrote the solver in C++ and compiled it to WebAssembly using Emscripten, which yielded a 10x speed increase. The bot searches a limit of 2 million moves, which takes
+                    roughly 4 seconds on average. In the future, I hope to further optimize the solver by using a bitboard representation and adding a transposition table.
+                </p>
+            </div></li>
+        
+        <li><div class="project">
+            <a href="https://github.com/ethantomb/My-First-Neural-Network" target="_blank">Feed-Forward Neural Network</a>
+            <p>
+                <b>Language: Python</b><br>
+                <b>Alt Link: </b><a href="https://github.com/ethantomb/My-First-Neural-Network"target="_blank">https://github.com/ethantomb/My-First-Neural-Network</a><br>
+                I was insipred by Sebastian Lague's video <a href="https://www.youtube.com/watch?v=hfMk-kjRv4c"target="_blank">How to Create a Neural Network (and Train it to Identify Doodles)</a>
+                , where he gave a stellar explanation of the basics of machine learning and built a feed-forward Neural Network in C#. I built a feed-forward neural network in Python on top of Numpy arrays, wihtout
+                using any other ML Libraries. The network has an adjustable depth, input size, hidden layer size, and output layer size. I trained it on the MNIST handwritten digits dataset and the Google QuickDraw! dataset.
+                So far, it achives a validation accuracy of 95% and 82% on the two datasets, respectively. I created a simple pygame canvas to test it on my own digits and doodles, and it performs well, although I have no nominal data for that.
+
+            </p>
+        </div>
+    </li>
+        <li>
+            <div class="project">
+                <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Engineering Honors Robotics Project</a>
+                <p>
+                    <b>Language: C++</b><br>
+                    <b>Alt Link: </b><a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1"target="_blank">https://github.com/ethantomb/FEH22-Robotics_Project-E1</a><br>
+                    This is the culmination of a semester-long group project for my Freshman Engineering Honors course. My 3 teammates and I designed, modeled, documented, coded, tested, 
+                    coded, tested... a robot. The robot's task was to serve as a waiter in a miniature model diner. It performed the following tasks: 
+                    sliding an order ticket, flipping a burger, taking a tray to the trash can, operating a soft-serve machine, and changing the song on a jukebox. Our robot, affectionately named SCRAP-E, 
+                    placed in the top 16 out of over 60 groups during the class competition. As the primary programmer, I learned an enormous amount about the 
+                    collaborative testing and design progress that composes the daily responsibility of a software engineer.
+                    
+                </p>
+            </div>
         </li>
-        <li><a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4 - Man Vs Machine(Website)</a></li>
-        <li><a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1">Engineering Honors Robotics Project(Github Repository)</a>
-        </li>
-        <li><a href="https://github.com/ethantomb/My-First-Neural-Network" target="_blank">Neural Network from Scratch in Python (Github Repository)</a></li>
     </ul>
-    <p>This is a model of a robot I built for a freshman engineering honors course. I coded the robot in C++, and with
-        the help of my 3 teammates, we designed and built it.</p>
+    <p>This is a model of the robotThe model was created in Solidworks and embedded here using Three.JS</p>
     <p>We ended up placing top 16 in the final competition. A model of the robot is below.</p>
     <p style="font-weight:bold;">Mobile Users: Tap the screen below if the model doesnt load. Use 1 finger to pan, 2
         fingers to drag, pinch to zoom</p>
     <p style="font-weight:bold;">Desktop Users: If the model runs slowly, go to chrome://settings, search "Use Hardware
-        Acceleration" and turn it on. Left click to pan, Right click to drag, and use the scroll wheel to zoom. This
-        embed was added using three.js</p>
+        Acceleration" and turn it on. Left click to pan, Right click to drag, and use the scroll wheel to zoom. </p>
     <br><br>
 
-    <span id="closeModel" onclick="closeModel()">Click to Close Model</span>
+    <span id="closeModel" onclick="closeModel()">Click to Open Model</span>
     
     <div id="model-container">
         <h1 id="SCRAP-E">SCRAP-E</h1>
@@ -70,9 +125,9 @@
     
     <script type="text/javascript">
         function closeModel() {
-            let modelClosed = document.getElementById("model-container").style.display == "none";
-
-            document.getElementById("model-container").style.display = (modelClosed ? "flex" : "none");
+            console.log(document.getElementById("model-container").style.display);
+            let modelClosed = document.getElementById("model-container").style.display == "";
+            document.getElementById("model-container").style.display = (modelClosed ? "flex" : "");
             document.getElementById("closeModel").style.backgroundColor = (modelClosed ? "#870000" : "#015603");
             document.getElementById("closeModel").innerHTML = (modelClosed ? "Click to Close Model" : "Click to Open Model");
         }

@@ -1,6 +1,8 @@
 body{
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #FFFFFF;
+    color: #000000;
+    background-image:url("../img/background.webp");
+    background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 20px;
     margin:0;
@@ -19,7 +21,7 @@ body{
     width: auto;
 }
 #model-container{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     
@@ -42,9 +44,11 @@ body{
     height: 0.1vh;
 }
 #closeModel{
-    background-color: #870000;
+    background-color: #015603;
     display: block;
     text-align: center;
+    margin-bottom: 10px;
+    padding:10px;
 }
 .navbar{
     height:65px;
@@ -75,8 +79,6 @@ body{
 }
 .nav_element{
     padding: auto;
-    
-
     border: 2px solid #fefefe;
     border-radius: 5px;
     background-color: #3b3a3a;
@@ -85,7 +87,17 @@ body{
     background-color: #e15c5c;
 }
 
-.projects li a{
+.projects{
+    list-style-type:none;
+    display:block;
+    padding:0;
+
+}
+.project{
+    border:5px solid #e15c5c;
+    border-radius: 5px;
+}
+.project>a{
     display: block;
     color: #ffffff;
     padding: 14px 16px;
@@ -94,8 +106,11 @@ body{
     list-style-type: none;
     background-color: #ae4f4f;
 }
-.projects li a:hover{
+.project>a:hover{
     background-color: #691515;
+}
+.project p{
+    padding-left:100px;
 }
 .gameBoard{
     float:left;
