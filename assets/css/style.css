@@ -96,6 +96,7 @@ body{
 .project{
     border:5px solid #e15c5c;
     border-radius: 5px;
+    word-wrap:break-word;
 }
 .project>a{
     display: block;
@@ -108,9 +109,6 @@ body{
 }
 .project>a:hover{
     background-color: #691515;
-}
-.project p{
-    padding-left:100px;
 }
 .gameBoard{
     float:left;
