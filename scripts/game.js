@@ -2,6 +2,7 @@
 //TODO:
 //Organize and comment code
 class Board {
+
     constructor() {
         this.board = [];
 
@@ -19,7 +20,8 @@ class Board {
 
     }
     draw() {
-        this.width = Math.min(window.innerWidth, 700);
+        this.width = document.getElementById("contentP").offsetWidth;
+        console.log(this.width);
         this.height = this.width;
         document.getElementById("tttBoard").width = this.width;
         document.getElementById("tttBoard").height = this.height;
@@ -28,20 +30,20 @@ class Board {
         ctx.fillStlye = "white";
         ctx.fillRect(0, 0, this.width, this.height);
         ctx.fillStyle = "white";
-        ctx.fillRect((this.width / 3) - 20, 0, 20, this.height);
-        ctx.fillRect((2 * this.width / 3) - 20, 0, 20, this.height);
-        ctx.fillRect(0, (this.height / 3) - 20, this.width, 20);
-        ctx.fillRect(0, (2 * this.height / 3) - 20, this.width, 20);
+        ctx.fillRect((this.width / 3) - 20, 0, this.width/25, this.height);
+        ctx.fillRect((2 * this.width / 3) - 20, 0, this.width/25, this.height);
+        ctx.fillRect(0, (this.height / 3) - 20, this.width, this.width/25);
+        ctx.fillRect(0, (2 * this.height / 3) - 20, this.width, this.width/25);
         ctx.font = this.width / 3 - 40 + 'px sans-serif';
         for (let i = 0; i < this.board.length; i++) {
             for (let j = 0; j < this.board[i].length; j++) {
                 if (this.board[i][j] == 1) {
                     ctx.fillStyle = "red";
-                    ctx.fillText("X", (i) * this.width / 3 + 40, (j + 1) * this.height / 3 - 40);
+                    ctx.fillText("X", (i) * this.width / 3 +20 , (j + 1) * this.height / 3-30);
                 }
                 else if (this.board[i][j] == -1) {
                     ctx.fillStyle = "blue";
-                    ctx.fillText("O", (i) * this.width / 3 + 40, (j + 1) * this.height / 3 - 40);
+                    ctx.fillText("O", (i) * this.width / 3+20, (j + 1) * this.height / 3-1 -30);
                 }
             }
         }
@@ -207,10 +209,11 @@ class Board {
     }
 
 }
+var gBoard;
 function reset() {
 
     document.getElementById("game_status").innerHTML = "";
-    var gBoard = new Board();
+    gBoard=new Board(); 
     gBoard.playerTurn = true;
     document.getElementById("tttBoard").addEventListener('click', function (e) {
         gBoard.processClick(e);
@@ -218,5 +221,8 @@ function reset() {
 
 }
 $(document).ready(function () {
-
+    gBoard=new Board();
+    document.getElementById("tttBoard").addEventListener('click', function (e) {
+        gBoard.processClick(e);
+    });
 });

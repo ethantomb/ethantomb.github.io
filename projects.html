@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRKBFGL3RS"></script>
     <script>
@@ -16,107 +18,119 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico">
+    <script src="data/projectsNavControls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
         integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
         crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/d306c3fa32.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://threejs.org/examples/jsm/controls/OrbitControls.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <nav class="navbar" style="top:0px;">
-        <ul>
-            <li class="nav_element"><a href="index.html">About Me</a></li>
-            <li class="nav_element"><a href="https://github.com/ethantomb" target="_blank"><img class="navImg"
-                        src="assets/img/GitHub.png" alt="GitHub"></a></li>
-            <li class="nav_element"><a href="https://www.linkedin.com/in/ethan-tomb/" target="_blank"><img
-                        class="navImg" src="assets/img/Linkedin.png" alt="linkedin"></a></li>
-        </ul>
-    </nav>
-    <h1>My Projects</h1>
-    <p>These are some personal projects that I have worked on! They are all works-in-progress, and I will continue to update and improve them as I continue to learn.
-        
+    <div class="navbar-box">
+        <nav class="navbar" style="top:0px;">
+            <ul>
+                <li class="nav_element"><a href="index.html">About Me</a></li>
+                <li class="nav_element"><a href="https://github.com/ethantomb" target="_blank"><img class="navImg"
+                            src="assets/img/GitHub.png" alt="GitHub"></a></li>
+                <li class="nav_element"><a href="https://www.linkedin.com/in/ethan-tomb/" target="_blank"><img
+                            class="navImg" src="assets/img/Linkedin.png" alt="linkedin"></a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="heading">
+        <h1>My Projects</h1>
+        <p>These are some personal projects that I have worked on! They are all works-in-progress, and I will continue to update and improve them as I continue to learn.
+          
+    </div>
+      
     </p>
-
-    <ul class="projects">
-        <li><div class="project">
-            <a href="https://ethantomb.github.io/collapse" target="_blank">Winding Roads</a>
-            <p>
-                <b>Language: JavaScript</b><br>
-                <b>Alt Link: </b><a href="https://ethantomb.github.io/collapse"target="_blank">https://ethantomb.github.io/collapse</a><br>
-                Winding Roads is a canvas generator. It uses a wave-function collapse algorithm to graph a set of 6 road pieces
-                onto an nxm grid, such that every road vertex is connected to another road vertex and every grass vertex is connected 
-                to another grass vertex. The end result is a complete image that looks aestetically pleasing (at least, I think so) 
-                and logically fits together like a puzzle.
-            </p>
-        </div>
-        </li>
-        <li><div class="project">
-            <a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker</a>
-            <p>
-                <b>Language: JavaScript</b><br>
-                <b>Alt Link: </b><a href="https://ethantomb.github.io/valotracker"target="_blank">https://ethantomb.github.io/valotracker</a><br>
-                ValoTracker is a Valorant player lookup tool. This uses HenrikDev's unofficial Valorant API. Check him out at 
-                <a href="https://docs.henrikdev.xyz/">https://docs.henrikdev.xyz/</a>. He's an amazing developer. So far, my website works 
-                on every server region and every player.
-            </p>
+    
+    <div class="projects-container-container">
         
-        </div>
-            </li>
-        <li>
+        <div class="projects-container">
+        
+        
+        
+            <div class="project">
+                <a href="https://chrome.google.com/webstore/detail/geoguessr-better-leaderbo/jfipnkcdgkdndjndmkkcbmnlminnlfbn" target="_blank">Better Leaderboard - Chrome Extension</a>
+                <p>
+                    This is a chrome extension that I made for the game GeoGuessr to fix my biggest complaint with the app. By default, the leaderboard only shows the top 26 players, and the User's only navigation option is a "show more" button that loads the next 26. 
+                    Better Leaderboard introduces enchanced functionality by giving users the option to filter GeoGuessr leaderboards by username and any custom range. It also allows users to download all of the leaderboard data as a JSON file. 
+                    <br><b>JavaScript(JQuery)</b>
+                </p>
+                
+            
+            </div>
+        
             <div class="project">
                <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
                 <p>
-                    <b>Language: JavaScript,C++(Compiled to WASM)</b><br>
-                    <b>Alt Link: </b><a href="https://ethantomb.github.io/connect4"target="_blank">https://ethantomb.github.io/connect4</a><br>
-                    This is a Human-VS-AI Connect 4 game. It uses a minimax algorithm with alpha beta pruning to search for the best move. 
-                    I wrote the solver in C++ and compiled it to WebAssembly using Emscripten, which yielded a 10x speed increase. The bot searches a limit of 2 million moves, which takes
-                    roughly 4 seconds on average. In the future, I hope to further optimize the solver by using a bitboard representation and adding a transposition table.
+                    This is a Human-VS-AI Connect 4 game. I wrote the solver in C++ and used Emscripten to compile it to JavaScript-friendly WebAssembly code. In the future, I hope to further optimize the solver by using a bitboard representation and adding a transposition table.
+                    <br><b>JavaScript with C++ Solver (Emscripten)</b>
                 </p>
-            </div></li>
+            </div>
         
-        <li><div class="project">
+        <div class="project">
             <a href="https://github.com/ethantomb/My-First-Neural-Network" target="_blank">Feed-Forward Neural Network</a>
             <p>
-                <b>Language: Python</b><br>
-                <b>Alt Link: </b><a href="https://github.com/ethantomb/My-First-Neural-Network"target="_blank">https://github.com/ethantomb/My-First-Neural-Network</a><br>
-                I was insipred by Sebastian Lague's video <a href="https://www.youtube.com/watch?v=hfMk-kjRv4c"target="_blank">How to Create a Neural Network (and Train it to Identify Doodles)</a>
-                , where he gave a stellar explanation of the basics of machine learning and built a feed-forward Neural Network in C#. I built a feed-forward neural network in Python on top of Numpy arrays, wihtout
+                
+                Inspired by <a href="https://www.youtube.com/watch?v=hfMk-kjRv4c"target="_blank">Sebastian Lague's Video</a>
+                , I built a feed-forward neural network in Python on top of Numpy arrays, without
                 using any other ML Libraries. The network has an adjustable depth, input size, hidden layer size, and output layer size. I trained it on the MNIST handwritten digits dataset and the Google QuickDraw! dataset.
-                So far, it achives a validation accuracy of 95% and 82% on the two datasets, respectively. I created a simple pygame canvas to test it on my own digits and doodles, and it performs well, although I have no nominal data for that.
+                I document the project in-depth at the GitHub link above.
+                <br><b>Python(Numpy,Pandas,Pygame)</b>
 
             </p>
         </div>
-    </li>
-        <li>
-            <div class="project">
-                <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Engineering Honors Robotics Project</a>
+        <div class="project">
+            <a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker</a>
+            <p>
+                ValoTracker is a Valorant player lookup tool. Built on top of 
+                <a href="https://docs.henrikdev.xyz/">HenrikDev's unofficial Valorant API</a>. Unlike more popular trackers, mine works 
+                on every Valorant account. 
+                <br><b>JavaScript</b>
+            </p>
+            
+        
+        </div>
+        <div class="project">
+            <a href="https://ethantomb.github.io/collapse" target="_blank">Winding Roads</a>
+            <p>
+                Winding Roads is a canvas generator that uses a wave-function collapse algorithm to graph a set of road sprites
+                onto a grid, such that every road is connected. The end result is a complete image that looks aestetically pleasing
+                and logically fits together like a puzzle.
+                <br><b>JavaScript</b>
+            </p>
+        </div>
+        <div class="project">
+                <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Robotics Project - FE Honors</a>
                 <p>
-                    <b>Language: C++</b><br>
-                    <b>Alt Link: </b><a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1"target="_blank">https://github.com/ethantomb/FEH22-Robotics_Project-E1</a><br>
-                    This is the culmination of a semester-long group project for my Freshman Engineering Honors course. My 3 teammates and I designed, modeled, documented, coded, tested, 
-                    coded, tested... a robot. The robot's task was to serve as a waiter in a miniature model diner. It performed the following tasks: 
-                    sliding an order ticket, flipping a burger, taking a tray to the trash can, operating a soft-serve machine, and changing the song on a jukebox. Our robot, affectionately named SCRAP-E, 
-                    placed in the top 16 out of over 60 groups during the class competition. As the primary programmer, I learned an enormous amount about the 
-                    collaborative testing and design progress that composes the daily responsibility of a software engineer.
-                    
+                    As part of a semester-long project, my teammates and I designed a robot form scratch. Then we built it, programmed it, tested it, while documenting the whole process. We ended up placing in top 16 in the final competition. A model of the robot is below.
+                    <br><b>SolidWorks(Model), C++(With <a href="https://u.osu.edu/fehproteus/">FEH Proteus Library</a>)</b>
                 </p>
-            </div>
-        </li>
-    </ul>
-    <p>This is a model of the robotThe model was created in Solidworks and embedded here using Three.JS</p>
-    <p>We ended up placing top 16 in the final competition. A model of the robot is below.</p>
-    <p style="font-weight:bold;">Mobile Users: Tap the screen below if the model doesnt load. Use 1 finger to pan, 2
+        </div>
+        </div>
+        <div class="slide-controls">
+            <button onclick="showPrevious()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></button>
+            
+            <button onclick="showNext()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+        </div>
+    </div>
+
+    <p>This is the model of the robot. (Embeded with three.js)</p>
+    <p class="mobileInstructions">Mobile Users: Tap the screen below if the model doesnt load. Use 1 finger to pan, 2
         fingers to drag, pinch to zoom</p>
-    <p style="font-weight:bold;">Desktop Users: If the model runs slowly, go to chrome://settings, search "Use Hardware
+    <p class="desktopInstructions">Desktop Users: If the model runs slowly, go to chrome://settings, search "Use Hardware
         Acceleration" and turn it on. Left click to pan, Right click to drag, and use the scroll wheel to zoom. </p>
     <br><br>
 
-    <span id="closeModel" onclick="closeModel()">Click to Open Model</span>
+    <span id="closeModel" onclick="closeModel()">Click to Close Model</span>
     
     <div id="model-container">
-        <h1 id="SCRAP-E">SCRAP-E</h1>
         <div id="model">
             
         </div>
@@ -125,9 +139,8 @@
     
     <script type="text/javascript">
         function closeModel() {
-            console.log(document.getElementById("model-container").style.display);
-            let modelClosed = document.getElementById("model-container").style.display == "";
-            document.getElementById("model-container").style.display = (modelClosed ? "flex" : "");
+            let modelClosed = document.getElementById("model-container").style.display == "none";
+            document.getElementById("model-container").style.display = (modelClosed ? "flex" : "none");
             document.getElementById("closeModel").style.backgroundColor = (modelClosed ? "#870000" : "#015603");
             document.getElementById("closeModel").innerHTML = (modelClosed ? "Click to Close Model" : "Click to Open Model");
         }
