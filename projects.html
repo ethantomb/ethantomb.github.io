@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico">
-    <script src="data/projectsNavControls.js"></script>
+    <script src="scripts/projectsNavControls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
         integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
         crossorigin="anonymous"></script>
@@ -58,7 +58,7 @@
             <div class="project">
                 <a href="https://chrome.google.com/webstore/detail/geoguessr-better-leaderbo/jfipnkcdgkdndjndmkkcbmnlminnlfbn" target="_blank">Better Leaderboard - Chrome Extension</a>
                 <p>
-                    This is a chrome extension that I made for the game GeoGuessr to fix my biggest complaint with the app. By default, the leaderboard only shows the top 26 players, and the User's only navigation option is a "show more" button that loads the next 26. 
+                    This is a chrome extension that I made for the game GeoGuessr to fix my biggest complaint with the app. By default, the leaderboard only shows the top 26 players, and the user's only navigation option is a "show more" button that loads the next 26. 
                     Better Leaderboard introduces enchanced functionality by giving users the option to filter GeoGuessr leaderboards by username and any custom range. It also allows users to download all of the leaderboard data as a JSON file. 
                     <br><b>JavaScript(JQuery)</b>
                 </p>
@@ -109,15 +109,15 @@
         <div class="project">
                 <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Robotics Project - FE Honors</a>
                 <p>
-                    As part of a semester-long project, my teammates and I designed a robot form scratch. Then we built it, programmed it, tested it, while documenting the whole process. We ended up placing in top 16 in the final competition. A model of the robot is below.
+                    As part of a semester-long project, my teammates and I designed a robot form scratch. Then we built, programmed, and tested it. We ended up placing in the top 16 out of 64 teams in the final classwide tournament. A model of the robot is below.
                     <br><b>SolidWorks(Model), C++(With <a href="https://u.osu.edu/fehproteus/">FEH Proteus Library</a>)</b>
                 </p>
         </div>
         </div>
-        <div class="slide-controls">
-            <button onclick="showPrevious()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></button>
-            
-            <button onclick="showNext()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
+        <div class="project-controls">
+            <button id="btn_prev" onclick='navigate("previous")' disabled><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></button>
+            <label id="currentSelected"></label>
+            <button id="btn_next" onclick='navigate("next")'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
         </div>
     </div>
 

@@ -151,12 +151,12 @@ body{
     justify-content:center;
     flex-direction:column;
 }
-.slide-controls{
+.project-controls{
     display:flex;
     justify-content:center;
     margin-top:25px;
 }
-.slide-controls > button{
+.project-controls > button{
     
     margin-right: 50px;
     margin-left:50px;
@@ -188,6 +188,8 @@ body{
     border:5px solid #e15c5c;
     border-radius: 5px;
     word-wrap:break-word;
+    display:none;
+    animation-fill-mode: forwards;
 }
 .project>a{
     display: block;
@@ -201,6 +203,54 @@ body{
 .project > p{
     background-color:#fefefe;
     opacity:0.9;
+}
+@keyframes slideOutLeft {
+    from {
+        display:block;
+        opacity:100%;
+        left: 0px;
+    }
+    to {
+        display:none;
+        opacity:0%;
+        left: 200px;
+    }
+}
+@keyframes slideInLeft {
+    from {
+        display:none;
+        opacity:0%;
+        left: 200px;
+    }
+    to {
+        display:block;
+        opacity:100%;
+        left: 0px;
+    }
+}
+@keyframes slideOutRight {
+    from {
+        display:block;
+        opacity:100%;
+        right: 0px;
+    }
+    to {
+        display:none;
+        opacity:0%;
+        right: 200px;
+    }
+}
+@keyframes slideInRight {
+    from {
+        display:none;
+        opacity:0%;
+        right: 200px;
+    }
+    to {
+        display:block;
+        opacity:100%;
+        right: 0px;
+    }
 }
 .game-container{
     display:flex;
