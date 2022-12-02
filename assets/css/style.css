@@ -192,10 +192,11 @@ body{
     animation-fill-mode: forwards;
 }
 .project>a{
+    text-align:center;
     display: block;
     color: #ffffff;
     padding: 14px 16px;
-    background-color: #ae4f4f;
+    background-color: #828282;
 }
 .project>a:hover{
     background-color: #691515;
