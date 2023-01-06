@@ -4,20 +4,23 @@ body{
     background-size: cover;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 20px;
-  
     
+    margin:0px;
+    background-color: #fafeea;
 }
 
 .header-box{
     display:flex;
     justify-content:center;
-    align-items:center;
-   
+    height: 100vh;
+    width: 100%;
 }
 .profile{
     display:flex;
     flex-direction:column;
     align-items: center;
+    justify-content:center;
+    
     background-color:#454545;
 }
 .img-container{
@@ -29,15 +32,20 @@ body{
 }
 .img-container>img{
     aspect-ratio:1/1;
-    width:50vmin;
+    max-width:100%;
 }
+
 .name-container{
-    width:50vmin;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     text-align:center;
-    
+    padding: 0%;
     color: #454545;
     background-color:#dedede;
     border-radius:10px;
+}
+.name-container >p{
+    margin:0;
 }
 .links-container{
     display:flex;
@@ -93,7 +101,18 @@ body{
     background-color: #e15c5c;
 }
 .heading{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+.heading>h1{
     text-align:center;
+}
+.heading>p{
+    background-color:#aeaeae;
+    width:75vw;
+    text-align:left;
 }
 .languageBox{
     display:flex;
@@ -111,13 +130,31 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width:100vw;
 }
 .body-content{
-    width:80vmin;
+    height:100vh;
+    max-width:100vh;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
 }
-.body-content > p{
+@media (min-aspect-ratio: 1/1) {
+    .body-content {
+      flex-direction: row;
+    }
+  }
+  
+  @media (max-aspect-ratio: 1/1) {
+    .body-content {
+      flex-direction: column;
+    }
+  }
+#contentP{
     background-color:#979393;
-    padding:10px;
+    padding:10%;
+    margin:5%;
+
 }
 #model-container{
     display: flex;
@@ -148,13 +185,21 @@ body{
 }
 .projects-container-container{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     flex-direction:column;
+    align-items: center;
+    background-color: #fafeea;
+    
 }
 .project-controls{
     display:flex;
     justify-content:center;
     margin-top:25px;
+}
+.projNavInstructions{
+    padding-inline: 5%;
+    font-size: 18px;
+    
 }
 .project-controls > button{
     
@@ -174,6 +219,7 @@ body{
     justify-content:center;
     display:flex;
     flex-direction: column;
+    margin-top:1vmin;
 }
 
 .project{
@@ -189,6 +235,7 @@ body{
     border-radius: 5px;
     word-wrap:break-word;
     display:none;
+    position:relative;
     animation-fill-mode: forwards;
 }
 .project>a{
@@ -205,54 +252,13 @@ body{
     background-color:#fefefe;
     opacity:0.9;
 }
-@keyframes slideOutLeft {
-    from {
-        display:block;
-        opacity:100%;
-        left: 0px;
-    }
-    to {
-        display:none;
-        opacity:0%;
-        left: 200px;
-    }
+.project > ul{
+    background-color:#fefefe;
+    opacity:0.9;
 }
-@keyframes slideInLeft {
-    from {
-        display:none;
-        opacity:0%;
-        left: 200px;
-    }
-    to {
-        display:block;
-        opacity:100%;
-        left: 0px;
-    }
-}
-@keyframes slideOutRight {
-    from {
-        display:block;
-        opacity:100%;
-        right: 0px;
-    }
-    to {
-        display:none;
-        opacity:0%;
-        right: 200px;
-    }
-}
-@keyframes slideInRight {
-    from {
-        display:none;
-        opacity:0%;
-        right: 200px;
-    }
-    to {
-        display:block;
-        opacity:100%;
-        right: 0px;
-    }
-}
+
+
+
 .game-container{
     display:flex;
     flex-direction: column;
@@ -262,6 +268,7 @@ body{
     display:flex;
     flex-direction:column;
     justify-content:center;
+    align-items:center;
 }
 .game-chooseXO{
     display:flex;

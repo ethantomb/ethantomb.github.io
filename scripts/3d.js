@@ -1,14 +1,11 @@
-//Code for displaying the 3D model. 
-//TODO: 
-//Figure out how tf three js works so I can make it user friendly
-//Organize Comment Code
+
 import { OrbitControls } from 'https://unpkg.com/three@0.126.0/examples/jsm/controls/OrbitControls.js';
 const loader = new THREE.GLTFLoader();
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
-renderer.setPixelRatio( window.devicePixelRatio );
-renderer.setSize(window.innerWidth*0.7, window.innerHeight*0.7);
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth * 0.7, window.innerHeight * 0.7);
 //Add light to the scene
 const light = new THREE.PointLight(0xffffff, 1, 1000);
 light.position.set(0, 0, 0);
@@ -49,11 +46,29 @@ function resizeModelToContainer() {
     }
 }
 
-function animate() {
-    requestAnimationFrame(animate);
-    resizeModelToContainer();
-    controls.update();
-    renderer.render(scene, camera);
+let animationFrameId;
+
+function closeModel() {
+  let modelClosed = document.getElementById("model-container").style.display == "none";
+  document.getElementById("model-container").style.display = (modelClosed ? "flex" : "none");
+  document.getElementById("closeModel").style.backgroundColor = (modelClosed ? "rgb(244 122 122)" : "rgb(84 255 88)");
+  document.getElementById("closeModel").innerHTML = (modelClosed ? "Click to Close" : "Click to Open");
+
+  if (modelClosed) {
+    // Start the animation
+    animate();
+  } else {
+    // Stop the animation
+    cancelAnimationFrame(animationFrameId);
+  }
 }
 
-animate();
+function animate() {
+  
+  resizeModelToContainer();
+  controls.update();
+  renderer.render(scene, camera);
+  animationFrameId = requestAnimationFrame(animate);
+}
+$("#closeModel").on("click",closeModel);
+$("#closeModel").click();

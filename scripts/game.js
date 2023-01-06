@@ -21,7 +21,8 @@ class Board {
     }
     draw() {
         this.width = document.getElementById("contentP").offsetWidth;
-        console.log(this.width);
+        let linewidth = this.width/25;
+        
         this.height = this.width;
         document.getElementById("tttBoard").width = this.width;
         document.getElementById("tttBoard").height = this.height;
@@ -30,20 +31,22 @@ class Board {
         ctx.fillStlye = "white";
         ctx.fillRect(0, 0, this.width, this.height);
         ctx.fillStyle = "white";
-        ctx.fillRect((this.width / 3) - 20, 0, this.width/25, this.height);
-        ctx.fillRect((2 * this.width / 3) - 20, 0, this.width/25, this.height);
-        ctx.fillRect(0, (this.height / 3) - 20, this.width, this.width/25);
-        ctx.fillRect(0, (2 * this.height / 3) - 20, this.width, this.width/25);
+        let boxwidth = (this.width / 3)-linewidth/2;
+        let boxheight = (this.height/3)-linewidth/2;
+        ctx.fillRect(boxwidth, 0, linewidth, this.height);  //Left Vertical Line
+        ctx.fillRect(2*boxwidth+linewidth/2, 0, linewidth, this.height); //Right Vertical Line
+        ctx.fillRect(0, boxheight, this.width, linewidth); //Top Horizontal Line
+        ctx.fillRect(0, 2*boxheight+linewidth/2, this.width, linewidth); //Bottom Horiontal line
         ctx.font = this.width / 3 - 40 + 'px sans-serif';
         for (let i = 0; i < this.board.length; i++) {
             for (let j = 0; j < this.board[i].length; j++) {
                 if (this.board[i][j] == 1) {
                     ctx.fillStyle = "red";
-                    ctx.fillText("X", (i) * this.width / 3 +20 , (j + 1) * this.height / 3-30);
+                    ctx.fillText("X", (i) * this.width/3+2*linewidth, (j + 1) * this.height / 3-2*linewidth);
                 }
                 else if (this.board[i][j] == -1) {
                     ctx.fillStyle = "blue";
-                    ctx.fillText("O", (i) * this.width / 3+20, (j + 1) * this.height / 3-1 -30);
+                    ctx.fillText("O", (i) * this.width / 3+2*linewidth, (j + 1) * this.height / 3-2*linewidth);
                 }
             }
         }

@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRKBFGL3RS"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -15,16 +16,24 @@
     </script>
     <title>My Projects</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./assets/css/style.css">
 
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!--Animate.CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico">
-    <script src="scripts/projectsNavControls.js"></script>
+    <!--Three.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
         integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
         crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/d306c3fa32.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://threejs.org/examples/jsm/controls/OrbitControls.js"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/d306c3fa32.js" crossorigin="anonymous"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -40,113 +49,148 @@
             </ul>
         </nav>
     </div>
-    
+
     <div class="heading">
-        <h1>My Projects</h1>
-        <p>These are some personal projects that I have worked on! They are all works-in-progress, and I will continue to update and improve them as I continue to learn.
-          
+        <h1>Personal Projects</h1>
+        <p>Welcome to my personal software development portfolio! Here, you will find a selection of projects that I
+            have been working on. Please note that these are ongoing works-in-progress and I am constantly looking to
+            improve and update them as I continue to learn and grow as a software developer. Thank you for taking the
+            time to visit my portfolio and I hope you find something of interest here.</p>
     </div>
-      
-    </p>
-    
+
+
+
     <div class="projects-container-container">
-        
+        <div class="projNavInstructions">
+            <p>
+                You can use the left and right arrow buttons to browse through the different projects. To learn more
+                about a specific project, simply click on its title.
+            </p>
+        </div>
+        <div class="project-controls">
+            <button id="btn_prev" onclick='navigate("previous")' disabled><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                </svg></button>
+            <label id="currentSelected"></label>
+            <button id="btn_next" onclick='navigate("next")'><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg></button>
+        </div>
         <div class="projects-container">
-        
-        
-        
-            <div class="project">
-                <a href="https://chrome.google.com/webstore/detail/geoguessr-better-leaderbo/jfipnkcdgkdndjndmkkcbmnlminnlfbn" target="_blank">Better Leaderboard - Chrome Extension</a>
+
+
+
+            <div class="project" id="project0">
+                <a href="https://github.com/ethantomb/GeoGuessr-Userscripts" target="_blank">GeoGuessr Userscripts</a>
                 <p>
-                    This is a chrome extension that I made for the game GeoGuessr to fix my biggest complaint with the app. By default, the leaderboard only shows the top 26 players, and the user's only navigation option is a "show more" button that loads the next 26. 
-                    Better Leaderboard introduces enchanced functionality by giving users the option to filter GeoGuessr leaderboards by username and any custom range. It also allows users to download all of the leaderboard data as a JSON file. 
-                    <br><b>JavaScript(JQuery)</b>
+                    I have created and contributed to a number of userscripts and chrome extensions for the website
+                    <a href="https://www.geoguessr.com">geoguessr.com</a> in order to add features that I believed the game needed and to address requests from
+                    the community. Some examples of these include:
                 </p>
-                <a href="https://github.com/ethantomb/Better-Leaderboard" target="_blank">View The Source Code</a>
-            </div>
-        
-            <div class="project">
-               <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
+                <ul>
+                    <li>Allows users to view and learn from street view coverage in the locations where they make their guesses</li>
+                    <li>Better Leaderboard: Enhances the user's experience on GeoGuessr with a more user-friendly leaderboard</li>
+                    <li>Streak Counter (forked): Introduces a settings page to improve the user experience for the GeoGuessr
+                        Country Streaks extension</li>
+                    <li>Convenient Like Button: Adds a button to a page that is easier to find to make it easier to view liked maps.</li>
+                </ul>
                 <p>
-                    This is a Human-VS-AI Connect 4 game. I wrote the solver in C++ and used Emscripten to compile it to JavaScript-friendly WebAssembly code. In the future, I hope to further optimize the solver by using a bitboard representation and adding a transposition table.
-                    <br><b>JavaScript with C++ Solver (Emscripten)</b>
+                    <b>Written in JavaScript.</b>
+                </p>
+            </div>
+
+
+            <div class="project" id="project1">
+                <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
+                <p>
+                    I created a Human-VS-AI Connect 4 game where players can compete against an AI opponent. The game's
+                    solver was written in C++ and compiled to JavaScript-friendly WebAssembly code using Emscripten. I
+                    plan to optimize the solver in the future by implementing a bitboard representation and adding a
+                    transposition table for improved performance.
+                    <br><b>Front-End written in JavaScript. Solver engine written in C++.</b>
                 </p>
                 <a href="https://github.com/ethantomb/connect4" target="_blank">View The Source Code</a>
             </div>
-        
-        <div class="project">
-            <a href="https://github.com/ethantomb/My-First-Neural-Network" target="_blank">Feed-Forward Neural Network</a>
-            <p>
-                
-                Inspired by <a href="https://www.youtube.com/watch?v=hfMk-kjRv4c"target="_blank">Sebastian Lague's Video</a>
-                , I built a feed-forward neural network in Python on top of Numpy arrays, without
-                using any other ML Libraries. The network has an adjustable depth, input size, hidden layer size, and output layer size. I trained it on the MNIST handwritten digits dataset and the Google QuickDraw! dataset.
-                I document the project in-depth at the GitHub link above.
-                <br><b>Python(Numpy,Pandas,Pygame)</b>
 
-            </p>
-        </div>
-        <div class="project">
-            <a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker</a>
-            <p>
-                ValoTracker is a Valorant player lookup tool. Built on top of 
-                <a href="https://docs.henrikdev.xyz/">HenrikDev's unofficial Valorant API</a>. Unlike more popular trackers, mine works 
-                on every Valorant account. 
-                <br><b>JavaScript</b>
-            </p>
-            <a href="https://github.com/ethantomb/valotracker" target="_blank">View The Source Code</a>
-        
-        </div>
-        <div class="project">
-            <a href="https://ethantomb.github.io/collapse" target="_blank">Winding Roads</a>
-            <p>
-                Winding Roads is a canvas generator that uses a wave-function collapse algorithm to graph a set of road sprites
-                onto a grid, such that every road is connected. The end result is a complete image that looks aestetically pleasing
-                and logically fits together like a puzzle.
-                <br><b>JavaScript</b>
-            </p>
-            <a href="https://github.com/ethantomb/collapse" target="_blank">View The Source Code</a>
-        </div>
-        <div class="project">
-                <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Robotics Project - FE Honors</a>
+            <div class="project" id="project2">
+                <a href="https://github.com/ethantomb/My-First-Neural-Network" target="_blank">Feed-Forward Neural
+                    Network</a>
                 <p>
-                    As part of a semester-long project, my teammates and I designed a robot form scratch. Then we built, programmed, and tested it. We ended up placing in the top 16 out of 64 teams in the final classwide tournament. A model of the robot is below.
-                    <br><b>SolidWorks(Model), C++(With <a href="https://u.osu.edu/fehproteus/">FEH Proteus Library</a>)</b>
+
+                    I built a feed-forward neural network using Python and Numpy, without relying on any external ML
+                    libraries. This network can be customized with adjustable parameters for depth, input size, hidden
+                    layer size, and output layer size. I trained it on the MNIST handwritten digits dataset and the
+                    Google QuickDraw! dataset. You can find more information and a detailed explanation of the project
+                    at the GitHub link above.
+                    <br><b>Written in Python using Numpy, Pandas, and Pygame.</b>
+
                 </p>
+            </div>
+            <div class="project" id="project3">
+                <a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker</a>
+                <p>
+                    ValoTracker is a player lookup tool for the game Valorant, built using
+                    <a href="https://docs.henrikdev.xyz/">HenrikDev's unofficial Valorant API</a>. It is unique in that
+                    it works on every Valorant account, unlike other more popular trackers.
+                    <br><b>Written in JavaScript.</b>
+                </p>
+                <a href="https://github.com/ethantomb/valotracker" target="_blank">View The Source Code</a>
+
+            </div>
+            <div class="project" id="project4">
+                <a href="https://ethantomb.github.io/collapse" target="_blank">Winding Roads</a>
+                <p>
+                    Winding Roads is a canvas generator that uses a wave-function collapse algorithm to create a
+                    visually appealing and logically connected image. The generator takes a set of road sprites and
+                    places them onto a grid, ensuring that every road is connected to at least one other road. The end
+                    result is a complete image that looks aesthetically pleasing and fits together like a puzzle.
+                    <br><b>Written in JavaScript</b>
+                </p>
+                <a href="https://github.com/ethantomb/collapse" target="_blank">View The Source Code.</a>
+            </div>
+            <div class="project" id="project5">
+                <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Robotics Project -
+                    Fundamentals of Engineering
+                    Honors</a>
+                <p>
+                    For a semester-long project, my team and I designed and built a robot from scratch, including
+                    programming and testing it. Our hard work paid off when we placed in the top 16 out of 64 teams in
+                    the final classwide tournament. You can see a model of our robot below.
+                    <br><b>Modeled in SolidWorks. Written in C++ With the <a href="https://u.osu.edu/fehproteus/">FEH
+                            Proteus
+                            Library</a>.</b>
+                </p>
+            </div>
         </div>
-        </div>
-        <div class="project-controls">
-            <button id="btn_prev" onclick='navigate("previous")' disabled><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></button>
-            <label id="currentSelected"></label>
-            <button id="btn_next" onclick='navigate("next")'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></button>
-        </div>
+
     </div>
+    <div class="robotText">
 
-    <p>This is the model of the robot. (Embeded with three.js)</p>
-    <p class="mobileInstructions">Mobile Users: Tap the screen below if the model doesnt load. Use 1 finger to pan, 2
-        fingers to drag, pinch to zoom</p>
-    <p class="desktopInstructions">Desktop Users: If the model runs slowly, go to chrome://settings, search "Use Hardware
-        Acceleration" and turn it on. Left click to pan, Right click to drag, and use the scroll wheel to zoom. </p>
-    <br><br>
 
-    <span id="closeModel" onclick="closeModel()">Click to Close Model</span>
-    
+
+        <p>This is the model of the robot. (Embeded with three.js)</p>
+        <p class="mobileInstructions">Mobile Users: Use 1 finger to pan, 2
+            fingers to drag, pinch to zoom</p>
+        <p class="desktopInstructions">Desktop Users: Left click to pan, Right click to drag, and use the scroll wheel
+            to zoom. <br> If the model runs slowly, go to chrome://settings, search "Use
+            Hardware Acceleration" and turn it on.</p>
+        <br><br>
+    </div>
+    <script type="module" src="./scripts/3d.js"></script>
+    <span id="closeModel">Click to Close Model</span>
+
     <div id="model-container">
         <div id="model">
-            
-        </div>
 
+        </div>
     </div>
-    
-    <script type="text/javascript">
-        function closeModel() {
-            let modelClosed = document.getElementById("model-container").style.display == "none";
-            document.getElementById("model-container").style.display = (modelClosed ? "flex" : "none");
-            document.getElementById("closeModel").style.backgroundColor = (modelClosed ? "#870000" : "#015603");
-            document.getElementById("closeModel").innerHTML = (modelClosed ? "Click to Close Model" : "Click to Open Model");
-        }
-    </script>
-    <script type="module" src="./scripts/3d.js"></script>
+    <script src="scripts/projectsNavControls.js"></script>
+
+
 
 </body>
 

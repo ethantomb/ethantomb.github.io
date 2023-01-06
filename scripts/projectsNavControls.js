@@ -3,18 +3,29 @@ var currentIndex = 0;
 var lastActive = 1;
 
 $(document).ready(function () {
-    allProjects = document.getElementsByClassName("projects-container")[0].children;
-
-    updateProjects();
+    allProjects = $.makeArray($(".projects-container").children());
+    updateProjects(true);
 });
-function updateProjects() {
+
+function updateProjects(firstTime=false) {
     if (allProjects) {
-        allProjects[lastActive].style.display = "none";
-        allProjects[currentIndex].style.display = "block";
+      if(!firstTime){
+        $(`#project${lastActive}`).slideUp(500, function() {
+          $(this).hide();
+        });
+        $(`#project${currentIndex}`).slideDown(500, function() {
+          $(this).show();
+        });
         lastActive = currentIndex;
-        document.getElementById("currentSelected").innerHTML = `${currentIndex + 1}/${allProjects.length}`;
+      }else{
+        $(`#project${currentIndex}`).show();
+        lastActive = currentIndex;
+      }
+      $("#currentSelected").text(`${currentIndex + 1}/${allProjects.length}`);
     }
-}
+  }
+  
+  
 function navigate(dir) {
     switch (dir) {
         case "previous":
@@ -40,5 +51,4 @@ function navigate(dir) {
                 updateProjects();
             }
     }
-
 }
