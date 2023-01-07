@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./scripts/game.js"></script>
-    <script src = "./scripts/pageeffects.js"></script>
+    <script src="./scripts/pageeffects.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -26,74 +26,79 @@
 
 
     <section id="section1">
-    <div class="header-box">
-        <div class="profile">
-            <div class="img-container">
-                <img src="assets/img/ethanpfp.jpg">
-            </div>
-            <div class="name-container">
-                <p style="font-size:x-large;">Ethan Tomb</p>
-                <p class="creds">Computer Science Engineering - The Ohio State University<br> (2021-2025)</p>
+        <div class="header-box">
+            <div class="profile">
+                <div class="img-container">
+                    <img src="assets/img/ethanpfp.jpg">
+                </div>
+                <div class="name-container">
+                    <p style="font-size:x-large;">Ethan Tomb</p>
+                    <p class="creds">Computer Science Engineering - The Ohio State University<br> (2021-2025)</p>
 
-            </div>
-            <div class="languageBox">
+                </div>
+                <div class="languageBox">
 
-                <img src="./assets/img/HTML.webp" alt="HTML" class="language">
-                <img src="./assets/img/CSS.png" alt="CSS" class="language">
-                <img src="./assets/img/JS.png" alt="JavaScript" class="language">
+                    <img src="./assets/img/HTML.webp" alt="HTML" class="language">
+                    <img src="./assets/img/CSS.png" alt="CSS" class="language">
+                    <img src="./assets/img/JS.png" alt="JavaScript" class="language">
 
-                <img src="./assets/img/cpp.png" alt="C++" class="language">
-                <img src="./assets/img/java.png" alt="Java" class="language">
-                <img src="./assets/img/python.png" alt="Python" class="language">
-            </div>
-            <div class="links-container">
-                <a href="projects.html">My Projects</a>
-            </div>
-            <div class="links-container">
+                    <img src="./assets/img/cpp.png" alt="C++" class="language">
+                    <img src="./assets/img/java.png" alt="Java" class="language">
+                    <img src="./assets/img/python.png" alt="Python" class="language">
+                </div>
+                <div class="links-container">
+                    <a href="projects.html">My Projects</a>
+                </div>
+                <div class="links-container">
 
-                <a href="https://github.com/ethantomb" target="_blank">My GitHub</a>
-                <a href="https://www.linkedin.com/in/ethan-tomb/" target="_blank">My LinkedIn</a>
+                    <a href="https://github.com/ethantomb" target="_blank">My GitHub</a>
+                    <a href="https://www.linkedin.com/in/ethan-tomb/" target="_blank">My LinkedIn</a>
+                </div>
             </div>
         </div>
-    </div>
 
-</section>
-<section id="section2">
-    <div class="body-box">
-        <div class="body-content">
-            <div>
-                <p id="contentP">
-                    Hi there! Thank you for visiting my portfolio. I am currently a second year Computer Science and Engineering (CSE) student at The Ohio State University. Through this portfolio, I aim to showcase my front-end development skills and present some of the projects that I have been working on. Please note that the site is currently undergoing renovations to give it a modern look and feel. You can view my projects by following the link above or you can try out my implementation of the classic game tic-tac-toe right here on the site. Thank you for your interest!
-                </p>
+    </section>
+    <section id="section2">
+        <div class="body-box">
+            <div class="body-content">
+                <div id = "contentP">
+                    <p>
+                        Hi there! Thank you for visiting my portfolio. I am currently a second year Computer Science and
+                        Engineering (CSE) student at The Ohio State University. Through this portfolio, I aim to
+                        showcase my front-end development skills and present some of the projects that I have been
+                        working on. You can view my projects <a href = "/projects.html">here</a> or at the link above or you can try out my
+                        implementation of the classic game tic-tac-toe right here on the site. Thank you for your
+                        interest!
+                    </p>
 
 
-            </div>
-
-            <div class="game-container">
-
-                
-                <div class="gameBoard">
-                    <canvas id="tttBoard" style="aspect-ratio:1/1;"></canvas>
                 </div>
-                <div class="game-control">
-                    <h3 id="game_status"></h3>
-                    <div class="game-chooseXO">
-                        <div>
-                            <label class="RadioLabel">Play X</label>
-                            <input type="radio" name="player" value="X" checked>
-                        </div>
-                        <div>
-                            <label class="RadioLabel">Play O</label>
-                            <input type="radio" name="player" value="O"> <br>
-                        </div>
+
+                <div class="game-container" >
+
+
+                    <div class="gameBoard">
+                        <canvas id="tttBoard" style="aspect-ratio:1/1;"></canvas>
                     </div>
+                    <div class="game-control">
+                        <h3 id="game_status"></h3>
+                        <div class="game-chooseXO">
+                            <div>
+                                <label class="RadioLabel">Play X</label>
+                                <input type="radio" name="player" value="X" checked>
+                            </div>
+                            <div>
+                                <label class="RadioLabel">Play O</label>
+                                <input type="radio" name="player" value="O"> <br>
+                            </div>
+                        </div>
 
-                    <button id="reset" onclick="reset()" enabled="true">Start!</button>
+                        <button id="reset" onclick="reset()">Start!</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 </body>
 

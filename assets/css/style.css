@@ -6,6 +6,8 @@ body{
     font-size: 20px;
     
     margin:0px;
+    margin-left: 8.5%;
+    margin-right:8.5%;
     background-color: #fafeea;
 }
 
@@ -77,13 +79,17 @@ body{
     padding: 0;
     overflow: hidden;
 }
-.navbar>ul>li a{
+.nav_element{
+    height: 45px;
+    margin:0;
+    padding: 15px 30px;
+    display:flex;
+    align-items:center;
+}
+.nav_element a{
     display: inline-block;
     color: #ffffff;
     text-align: center;
-
-    height: 45px;
-    padding: 10px 35px;
     text-decoration: none;
 }
 .navImg {
@@ -110,8 +116,8 @@ body{
     text-align:center;
 }
 .heading>p{
-    background-color:#aeaeae;
-    width:75vw;
+    background-color:#dedede;
+    
     text-align:left;
 }
 .languageBox{
@@ -130,38 +136,92 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width:100vw;
+    width: 100%;
 }
 .body-content{
     height:100vh;
-    max-width:100vh;
+    width: 100%;
     display:flex;
     justify-content: space-between;
     align-items:center;
 }
+#contentP{
+    background-color:#dedede;
+    padding:5%;
+    
+    width: 50vmin;
+    aspect-ratio: 5/7;
+}
+/*PC*/
 @media (min-aspect-ratio: 1/1) {
     .body-content {
       flex-direction: row;
     }
   }
-  
+  /*Mobile*/
   @media (max-aspect-ratio: 1/1) {
     .body-content {
       flex-direction: column;
     }
+    #contentP{
+        width:100%;
+    }
+    
   }
-#contentP{
-    background-color:#979393;
-    padding:10%;
-    margin:5%;
+
+/*Tik Tak Toe Game*/
+.game-container{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+}
+.game-control{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.game-chooseXO{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
 
 }
+.gameBoard{
+    float:left;
+}
+
+#reset{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f53333;
+    padding: 18.5px 30px;
+    color: #ffffff;
+    font-weight:bold;
+}
+#reset:disabled{
+    background-color: #f78282;
+}
+#reset:enabled:hover{
+    background-color: #ab1a1a;
+}
+.RadioLabel{
+    margin-left: auto;
+  margin-right: auto;
+    font-size: 20px;
+    font-weight:bold;
+    text-decoration: none;
+    list-style-type: none;
+}
+/*Robot Model*/
 #model-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    
+    width:100%;
+    height:100vmin;
     
    
 }
@@ -170,10 +230,10 @@ body{
     
     margin: 0 auto;
     background-color: #979393;
-
+    
 }
 #SCRAP-E{
-    padding: 10px;
+    
     height: 0.1vh;
 }
 #closeModel{
@@ -182,7 +242,9 @@ body{
     text-align: center;
     margin-bottom: 10px;
     padding:10px;
+    cursor:pointer;
 }
+/*Project*/
 .projects-container-container{
     display:flex;
     justify-content:space-between;
@@ -197,7 +259,7 @@ body{
     margin-top:25px;
 }
 .projNavInstructions{
-    padding-inline: 5%;
+    
     font-size: 18px;
     
 }
@@ -223,7 +285,6 @@ body{
 }
 
 .project{
-
     aspect-ratio: 7/4;
     padding:10px;
     color:#000000;
@@ -259,40 +320,8 @@ body{
 
 
 
-.game-container{
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-}
-.game-control{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-.game-chooseXO{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-
-}
-.gameBoard{
-    float:left;
-}
-
-#reset{
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #f53333;
-    padding: 18.5px 30px;
-    color: #ffffff;
-    font-weight:bold;
-}
-#reset:disabled{
-    background-color: #f78282;
-}
-#reset:enabled:hover{
-    background-color: #ab1a1a;
+.robotText{
+    font-size:18px;
 }
 .mobileInstructions{
     display:none;
@@ -301,17 +330,13 @@ body{
     .mobileInstructions{
         display:block;
     }
+    body{
+        margin-left: 5%;
+        margin-right:5%;
+    }
     .desktopInstructions{
         display:none;
     }
 }
 
 
-.RadioLabel{
-    margin-left: auto;
-  margin-right: auto;
-    font-size: 20px;
-    font-weight:bold;
-    text-decoration: none;
-    list-style-type: none;
-}

@@ -20,7 +20,7 @@ class Board {
 
     }
     draw() {
-        this.width = document.getElementById("contentP").offsetWidth;
+        this.width = document.querySelector(".game-container").clientWidth;
         let linewidth = this.width/25;
         
         this.height = this.width;
@@ -194,6 +194,9 @@ class Board {
 
                 let state = this.gameState();
                 if (state[0]) {
+                    
+                    $("#reset").prop("disabled",false);
+                    $("#tttBoard").css("cursor","auto");
                     if (state[1] == 1000) {
                         document.getElementById("game_status").innerHTML = "X Wins!";
                     } else if (state[1] == -1000) {
@@ -201,7 +204,7 @@ class Board {
                     } else {
                         document.getElementById("game_status").innerHTML = "Its a draw!";
                     }
-
+                    
                 } else {
                     this.playerTurn = true;
                 }
@@ -214,7 +217,9 @@ class Board {
 }
 var gBoard;
 function reset() {
-
+    $("#reset").prop("disabled","true");
+    
+    $("#tttBoard").css("cursor","pointer");
     document.getElementById("game_status").innerHTML = "";
     gBoard=new Board(); 
     gBoard.playerTurn = true;
@@ -228,4 +233,5 @@ $(document).ready(function () {
     document.getElementById("tttBoard").addEventListener('click', function (e) {
         gBoard.processClick(e);
     });
+    $("#reset").click();
 });

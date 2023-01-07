@@ -1,30 +1,39 @@
 
 import { OrbitControls } from 'https://unpkg.com/three@0.126.0/examples/jsm/controls/OrbitControls.js';
-const loader = new THREE.GLTFLoader();
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth * 0.7, window.innerHeight * 0.7);
-//Add light to the scene
-const light = new THREE.PointLight(0xffffff, 1, 1000);
-light.position.set(0, 0, 0);
-scene.add(light);
-//Add another light
-const light2 = new THREE.PointLight(0xffffff, 1, 1000);
-light2.position.set(5, 0, 5);
-scene.add(light2);
-document.getElementById("model").appendChild(renderer.domElement);
-var model;
-loader.load('./assets/robotModel/SCRAP-E Model.gltf', function (gltf) {
-    gltf.scene.scale.set(10, 10, 10);
-    gltf.scene.rotation.z = 3.14;
-    gltf.scene.rotation.y = 1.28;
+const LOADER = new THREE.GLTFLoader();
+const SCENE = new THREE.Scene();
+const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const RENDERER = new THREE.WebGLRenderer();
+const LIGHT = new THREE.PointLight(0xffffff, 1, 1000);
+const LIGHT2 = new THREE.PointLight(0xffffff, 1, 1000);
+const CONTAINER = document.getElementById("model-container");
+let FRAME_RATE = 45; 
+let FRAME_DELAY = 1000 / FRAME_RATE; // Calculate the delay in milliseconds
 
-    gltf.scene.position.y = 5;
+//Initialize renderer
+RENDERER.setPixelRatio(window.devicePixelRatio);
+RENDERER.setSize(CONTAINER.clientWidth, CONTAINER.clientHeight);
+//Add light to the scene
+LIGHT.position.set(0, 0, 0);
+SCENE.add(LIGHT);
+LIGHT2.position.set(5, 0, 5);
+SCENE.add(LIGHT2);
+//Display renderer
+document.getElementById("model").appendChild(RENDERER.domElement);
+//Load model
+var model;
+const pi = 3.1415
+LOADER.load('./assets/robotModel/SCRAP-E Model.gltf', function (gltf) {
+    //Resize to fit viewport
+    gltf.scene.scale.set(20, 20, 20);
+    //Rotate to logical default view angle
+    gltf.scene.rotation.z = pi;
+    gltf.scene.rotation.y = 2*pi/3;
+    gltf.scene.position.y = 3;
+    gltf.scene.position.x = -2;
     console.log(gltf.scene.position);
     model = gltf.scene;
-    scene.add(gltf.scene);
+    SCENE.add(gltf.scene);
 
 }, undefined, function (error) {
 
@@ -32,21 +41,34 @@ loader.load('./assets/robotModel/SCRAP-E Model.gltf', function (gltf) {
 
 });
 
-camera.position.y = 5;
-camera.position.z = 10;
-const controls = new OrbitControls(camera, renderer.domElement);
+CAMERA.position.y = 5;
+CAMERA.position.z = 10;
+const controls = new OrbitControls(CAMERA, RENDERER.domElement);
 function resizeModelToContainer() {
-    const canvas = renderer.domElement;
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
+    const canvas = RENDERER.domElement;
+    //console.log(canvas);
+    const width = CONTAINER.clientWidth;
+    const height = CONTAINER.clientHeight;
     if (canvas.width !== width || canvas.height !== height) {
-        renderer.setSize(width, height, false);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
+        canvas.style.width=width;
+        canvas.style.height=height;
+        RENDERER.setSize(width, height);
+        CAMERA.aspect = width / height;
+        CAMERA.updateProjectionMatrix();
     }
 }
 
 let animationFrameId;
+function animate() {
+  
+  //console.log("Rotation XYZ: ("+controls.object.rotation.x+","+controls.object.rotation.y+","+controls.object.rotation.z+")");
+  resizeModelToContainer();
+  controls.update();
+  RENDERER.render(SCENE, CAMERA);
+  animationFrameId = setTimeout(function() {
+    requestAnimationFrame(animate);
+  }, FRAME_DELAY);
+}
 
 function closeModel() {
   let modelClosed = document.getElementById("model-container").style.display == "none";
@@ -63,12 +85,15 @@ function closeModel() {
   }
 }
 
-function animate() {
+document.getElementById("FPSCap").addEventListener('input', function() {
+  //TODO: Fix Slider being jumpy
+  document.getElementById("currentFPSCap").innerText = "FPS Limit: "+this.value+" FPS";
+  // Update the FRAME_RATE and FRAME_DELAY constants
+  FRAME_RATE = this.value;
+  FRAME_DELAY = 1000 / FRAME_RATE;
+
   
-  resizeModelToContainer();
-  controls.update();
-  renderer.render(scene, camera);
-  animationFrameId = requestAnimationFrame(animate);
-}
+});
 $("#closeModel").on("click",closeModel);
+$("#closeModel").click();
 $("#closeModel").click();

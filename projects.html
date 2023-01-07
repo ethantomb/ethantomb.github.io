@@ -169,16 +169,18 @@
 
     </div>
     <div class="robotText">
-
-
-
-        <p>This is the model of the robot. (Embeded with three.js)</p>
-        <p class="mobileInstructions">Mobile Users: Use 1 finger to pan, 2
-            fingers to drag, pinch to zoom</p>
-        <p class="desktopInstructions">Desktop Users: Left click to pan, Right click to drag, and use the scroll wheel
-            to zoom. <br> If the model runs slowly, go to chrome://settings, search "Use
-            Hardware Acceleration" and turn it on.</p>
-        <br><br>
+        <p style="font-weight:bold;text-align:center">The Robot Model</p>
+        <p class="mobileInstructions">Mobile Instructions</p>
+        <ul class="mobileInstructions">
+            <li>Use 1 finger to pan, 2 fingers to drag, and pinch to zoom</li>
+        </ul>
+        <p class="desktopInstructions">Desktop Instructions</p>
+        <ul class="desktopInstructions">
+            <li>Left click to pan, Right click to drag, and use the scroll wheel or trackpad to zoom.</li>
+            <li>If the model runs slowly, go to chrome://settings, search "Use Hardware Acceleration" and turn it on.</li>
+        </ul> 
+        <label for = "FPSCap" id = "currentFPSCap">FPS Limit: 45 FPS</label>
+        <input type="range" id="FPSCap" name="FPSCap" min="1" max="144" value="45">
     </div>
     <script type="module" src="./scripts/3d.js"></script>
     <span id="closeModel">Click to Close Model</span>
@@ -189,9 +191,6 @@
         </div>
     </div>
     <script src="scripts/projectsNavControls.js"></script>
-
-
-
 </body>
 
 </html>
