@@ -108,9 +108,10 @@
                 <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
                 <p>
                     I created a Human-VS-AI Connect 4 game where players can compete against an AI opponent. The game's
-                    solver was written in C++ and compiled to JavaScript-friendly WebAssembly code using Emscripten. I
-                    plan to optimize the solver in the future by implementing a bitboard representation and adding a
-                    transposition table for improved performance.
+                    solver was written in C++ and compiled to JavaScript-friendly WebAssembly code using Emscripten. The solver 
+                    uses a negamax algorithm with alpha-beta pruning, and  I recently rewrote it to use a bitboard representation
+                    of the game board to improve performace(Commit date: Jan 20 2023). The solver is currently able to evaluate 5000 moves per millisecond
+                    and play at a depth of 14. 
                     <br><b>Front-End written in JavaScript. Solver engine written in C++.</b>
                 </p>
                 <a href="https://github.com/ethantomb/connect4" target="_blank">View The Source Code</a>
