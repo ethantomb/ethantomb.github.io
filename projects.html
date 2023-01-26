@@ -49,24 +49,19 @@
             </ul>
         </nav>
     </div>
-
-    <div class="heading">
-        <h1>Personal Projects</h1>
-        <p>Welcome to my personal software development portfolio! Here, you will find a selection of projects that I
-            have been working on. Please note that these are ongoing works-in-progress and I am constantly looking to
-            improve and update them as I continue to learn and grow as a software developer. Thank you for taking the
-            time to visit my portfolio and I hope you find something of interest here.</p>
-    </div>
-
-
-
-    <div class="projects-container-container">
-        <div class="projNavInstructions">
-            <p>
-                You can use the left and right arrow buttons to browse through the different projects. To learn more
-                about a specific project, simply click on its title.
-            </p>
+    <section class="overview">
+        <div class="heading">
+            <h1>Personal Projects</h1>
+            <p> Here, you will find a selection of projects that I
+                have been working on.</p>
         </div>
+
+    </section>
+    
+
+
+    <section class="projects-container-container">
+        
         <div class="project-controls">
             <button id="btn_prev" onclick='navigate("previous")' disabled><svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -92,20 +87,9 @@
                     <a href="https://github.com/ethantomb/GeoGuessr-Userscripts" target="_blank">GeoGuessr
                         Userscripts</a>
                     <p>
-                        I have created and contributed to a number of userscripts and chrome extensions for the website
-                        <a href="https://www.geoguessr.com">geoguessr.com</a> in order to add features that I believed
-                        the game needed and to address requests from
-                        the community. Some examples of these include:
+                        As a member of the <a href="https://www.geoguessr.com">GeoGuessr</a> community, I have created and contributed to multiple userscripts/chrome extensions for the website. 
+                        My aim is to make the website more accessible and enjoyable for all users. Cumulatively, my userscripts and extensions have been downloaded over 200 times.
                     </p>
-                    <ul>
-                        <li>Allows users to view and learn from street view coverage in the locations where they make
-                            their guesses</li>
-                        <li>Better Leaderboard: Enhances the user's experience on GeoGuessr with a more user-friendly
-                            leaderboard</li>
-                        <li>Streak Counter: Added a preferences page to the <i>Country Streaks Counter</i> community extension(cred. Juaopoqq)</li>
-                        <li>Convenient Like Button: Adds a button to a page that is easier to find to make it easier to
-                            view liked maps.</li>
-                    </ul>
                     <p>
                         <b>Written in JavaScript.</b>
                     </p>
@@ -123,13 +107,13 @@
                 <div class="proj-main">
                     <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
                     <p>
-                        I created a Human-VS-AI Connect 4 game where players can compete against an AI opponent. The
+                        I created a Human-VS-AI Connect 4 game. The
                         game's
-                        solver was written in C++ and compiled to JavaScript-friendly WebAssembly code using Emscripten.
+                        solver was written in C++ and compiled to browser-friendly WebAssembly code using Emscripten.
                         The solver
-                        uses a negamax algorithm with alpha-beta pruning, and I recently rewrote it to use a bitboard
-                        representation
-                        of the game board to improve performace(Commit date: Jan 20 2023). The solver is currently able
+                        uses a <b>negamax</b> algorithm with alpha-beta pruning as well as a <b>bitboard</b> 
+                        representation of the current game state. 
+                        improve performace(Commit date: Jan 20 2023). The solver is currently able
                         to evaluate 5000 moves per millisecond
                         and play at a depth of 14.
                         <br><b>Front-End written in JavaScript. Solver engine written in C++.</b>
@@ -229,7 +213,9 @@
             </div>
         </div>
 
-    </div>
+    </section>
+    <section class="robot-container">
+    <div class="robot-inner-container">
     <div class="robotText">
         <p style="font-weight:bold;text-align:center">The Robot Model</p>
         <p class="mobileInstructions">Mobile Instructions</p>
@@ -253,6 +239,8 @@
 
         </div>
     </div>
+</div>
+</section>
     <script src="scripts/projectsNavControls.js"></script>
 </body>
 

@@ -287,13 +287,25 @@ body{
     list-style-type: none;
 }
 /*Robot Model*/
+.robot-container{
+    
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+}
+.robot-inner-contianer{
+    display:flex;
+    width:70%;
+}
 #model-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    width:100%;
-    height:100vmin;
+   
+    height:90vmin;
     
    
 }
@@ -319,9 +331,10 @@ body{
 /*Project*/
 .projects-container-container{
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-start;
     flex-direction:column;
     align-items: center;
+    height:100vh;
     background-color: #fafeea;
     
 }
@@ -364,6 +377,8 @@ body{
 .proj-img{
     display:block;
     position:relative;
+    aspect-ratio:1;
+    width:22.5%;
 }
 .imgLeft{
     margin-right:2.5%;
@@ -374,8 +389,7 @@ body{
     left:100%;
 }
 .proj-img>img{
-    aspect-ratio:1;
-    width:50vmin;
+    width:100%;
 
 }
 .proj-main{
@@ -383,7 +397,7 @@ body{
     padding:10px;
     color:#000000;
     background-image:linear-gradient(135deg,#fd0000 0%,#fd3737 25%, #7928e9 75%,#ffffff 100%);
-    width:80vmin;
+    width:50%;
     justify-content:center;
     justify-self: center;
     border:5px solid #e15c5c;
@@ -425,7 +439,12 @@ body{
     .mobileInstructions{
         display:block;
     }
-    
+    .proj-img{
+        width:0%;
+    }
+    .proj-main{
+        width:90%;
+    }
     .desktopInstructions{
         display:none;
     }

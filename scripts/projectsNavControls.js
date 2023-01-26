@@ -22,24 +22,27 @@ function updateProjects(len,firstTime=false) {
         /**
          * Hide the previous project
          */
-        $(`#project${lastActive}`).slideUp(len*(3/2), function() {
-          l=$(this).children(".imgLeft");
-          r=$(this).children(".imgRight");
-          l.animate({right:"100%"});
-          r.animate({left:"100%"});
-          
+        let l=$(`#project${lastActive}`).children(".imgLeft");
+        let r=$(`#project${lastActive}`).children(".imgRight");
+        l.animate({right:"-100%"});
+        r.animate({left:"-100%"});
+        
+        $(`#project${lastActive}`).slideUp(len, function() {
+         
           $(this).css("display","none");
           
         });
         /**
          * Show the current project
          */
+        
         $(`#project${currentIndex}`).slideDown(len, function() {
-          l=$(this).children(".imgLeft");
-          r=$(this).children(".imgRight");
+          
+          $(this).css("display","flex");
+          l=$(`#project${currentIndex}`).children(".imgLeft");
+          r=$(`#project${currentIndex}`).children(".imgRight");
           l.css("display","block");
           r.css("display","block");
-          $(this).css("display","flex");
           l.animate({right:"0%"});
           r.animate({left:"0%"});
         });
