@@ -85,86 +85,147 @@
 
 
             <div class="project" id="project0">
-                <a href="https://github.com/ethantomb/GeoGuessr-Userscripts" target="_blank">GeoGuessr Userscripts</a>
-                <p>
-                    I have created and contributed to a number of userscripts and chrome extensions for the website
-                    <a href="https://www.geoguessr.com">geoguessr.com</a> in order to add features that I believed the game needed and to address requests from
-                    the community. Some examples of these include:
-                </p>
-                <ul>
-                    <li>Allows users to view and learn from street view coverage in the locations where they make their guesses</li>
-                    <li>Better Leaderboard: Enhances the user's experience on GeoGuessr with a more user-friendly leaderboard</li>
-                    <li>Streak Counter (forked): Introduces a settings page to improve the user experience for the GeoGuessr
-                        Country Streaks extension</li>
-                    <li>Convenient Like Button: Adds a button to a page that is easier to find to make it easier to view liked maps.</li>
-                </ul>
-                <p>
-                    <b>Written in JavaScript.</b>
-                </p>
+                <div class="proj-img imgLeft">
+                    <img src = "./assets/img/blbSquare.png">
+                </div>
+                <div class="proj-main">
+                    <a href="https://github.com/ethantomb/GeoGuessr-Userscripts" target="_blank">GeoGuessr
+                        Userscripts</a>
+                    <p>
+                        I have created and contributed to a number of userscripts and chrome extensions for the website
+                        <a href="https://www.geoguessr.com">geoguessr.com</a> in order to add features that I believed
+                        the game needed and to address requests from
+                        the community. Some examples of these include:
+                    </p>
+                    <ul>
+                        <li>Allows users to view and learn from street view coverage in the locations where they make
+                            their guesses</li>
+                        <li>Better Leaderboard: Enhances the user's experience on GeoGuessr with a more user-friendly
+                            leaderboard</li>
+                        <li>Streak Counter: Added a preferences page to the <i>Country Streaks Counter</i> community extension(cred. Juaopoqq)</li>
+                        <li>Convenient Like Button: Adds a button to a page that is easier to find to make it easier to
+                            view liked maps.</li>
+                    </ul>
+                    <p>
+                        <b>Written in JavaScript.</b>
+                    </p>
+                </div>
+                <div class="proj-img imgRight">
+                    <img src = "./assets/img/likedMapsSquare.png">
+                </div>
             </div>
 
 
-            <div class="project" id="project1">
-                <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
-                <p>
-                    I created a Human-VS-AI Connect 4 game where players can compete against an AI opponent. The game's
-                    solver was written in C++ and compiled to JavaScript-friendly WebAssembly code using Emscripten. The solver 
-                    uses a negamax algorithm with alpha-beta pruning, and  I recently rewrote it to use a bitboard representation
-                    of the game board to improve performace(Commit date: Jan 20 2023). The solver is currently able to evaluate 5000 moves per millisecond
-                    and play at a depth of 14. 
-                    <br><b>Front-End written in JavaScript. Solver engine written in C++.</b>
-                </p>
-                <a href="https://github.com/ethantomb/connect4" target="_blank">View The Source Code</a>
+            <div class="project" id="project1" style="display:none;">
+                <div class="proj-img imgLeft">
+                    <img src = "./assets/img/con4TitleSquare.png">
+                </div>
+                <div class="proj-main">
+                    <a href="https://ethantomb.github.io/connect4" target="_blank">Connect 4</a>
+                    <p>
+                        I created a Human-VS-AI Connect 4 game where players can compete against an AI opponent. The
+                        game's
+                        solver was written in C++ and compiled to JavaScript-friendly WebAssembly code using Emscripten.
+                        The solver
+                        uses a negamax algorithm with alpha-beta pruning, and I recently rewrote it to use a bitboard
+                        representation
+                        of the game board to improve performace(Commit date: Jan 20 2023). The solver is currently able
+                        to evaluate 5000 moves per millisecond
+                        and play at a depth of 14.
+                        <br><b>Front-End written in JavaScript. Solver engine written in C++.</b>
+                    </p>
+                    <a href="https://github.com/ethantomb/connect4" target="_blank">View The Source Code</a>
+                </div>
+                <div class="proj-img imgRight">
+                    <img src = "./assets/img/con4BoardSquare.png">
+                </div>
             </div>
 
-            <div class="project" id="project2">
-                <a href="https://github.com/ethantomb/My-First-Neural-Network" target="_blank">Feed-Forward Neural
-                    Network</a>
-                <p>
+            <div class="project" id="project2"style="display:none;">
+                <div class="proj-img imgLeft">
+                    <img src = "./assets/img/nnSquare1.png">
+                </div>
+                <div class="proj-main">
+                    <a href="https://github.com/ethantomb/My-First-Neural-Network" target="_blank">Feed-Forward Neural
+                        Network</a>
+                    <p>
 
-                    I built a feed-forward neural network using Python and Numpy, without relying on any external ML
-                    libraries. This network can be customized with adjustable parameters for depth, input size, hidden
-                    layer size, and output layer size. I trained it on the MNIST handwritten digits dataset and the
-                    Google QuickDraw! dataset. You can find more information and a detailed explanation of the project
-                    at the GitHub link above.
-                    <br><b>Written in Python using Numpy, Pandas, and Pygame.</b>
+                        I built a feed-forward neural network using Python and Numpy, without relying on any external ML
+                        libraries. This network can be customized with adjustable parameters for depth, input size,
+                        hidden
+                        layer size, and output layer size. I trained it on the MNIST handwritten digits dataset and the
+                        Google QuickDraw! dataset. You can find more information and a detailed explanation of the
+                        project
+                        at the GitHub link above.
+                        <br><b>Written in Python using Numpy, Pandas, and Pygame.</b>
 
-                </p>
+                    </p>
+                </div>
+                <div class="proj-img imgRight">
+                    <img src = "./assets/img/nnTrainSquare.png">
+                </div>
             </div>
-            <div class="project" id="project3">
-                <a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker</a>
-                <p>
-                    ValoTracker is a player lookup tool for the game Valorant, built using
-                    <a href="https://docs.henrikdev.xyz/">HenrikDev's unofficial Valorant API</a>. It is unique in that
-                    it works on every Valorant account, unlike other more popular trackers.
-                    <br><b>Written in JavaScript.</b>
-                </p>
-                <a href="https://github.com/ethantomb/valotracker" target="_blank">View The Source Code</a>
-
+            <div class="project" id="project3"style="display:none;">
+                <div class="proj-img imgLeft">
+                    <img src = "./assets/img/valoTrackSquare2.png">
+                </div>
+                <div class="proj-main">
+                    <a href="https://ethantomb.github.io/valotracker" target="_blank">ValoTracker</a>
+                    <p>
+                        ValoTracker is a player lookup tool for the game Valorant, built using
+                        <a href="https://docs.henrikdev.xyz/">HenrikDev's unofficial Valorant API</a>. It is unique in
+                        that
+                        it works on every Valorant account, unlike other more popular trackers.
+                        <br><b>Written in JavaScript.</b>
+                    </p>
+                    <a href="https://github.com/ethantomb/valotracker" target="_blank">View The Source Code</a>
+                </div>
+                <div class="proj-img imgRight">
+                    <img src = "./assets/img/valoTrackSquare1.png">
+                </div>
             </div>
-            <div class="project" id="project4">
-                <a href="https://ethantomb.github.io/collapse" target="_blank">Winding Roads</a>
-                <p>
-                    Winding Roads is a canvas generator that uses a wave-function collapse algorithm to create a
-                    visually appealing and logically connected image. The generator takes a set of road sprites and
-                    places them onto a grid, ensuring that every road is connected to at least one other road. The end
-                    result is a complete image that looks aesthetically pleasing and fits together like a puzzle.
-                    <br><b>Written in JavaScript</b>
-                </p>
-                <a href="https://github.com/ethantomb/collapse" target="_blank">View The Source Code.</a>
+            <div class="project" id="project4"style="display:none;">
+                <div class="proj-img imgLeft">
+                    <img src = "./assets/img/wRoadsSquare1.png">
+                </div>
+                <div class="proj-main">
+                    <a href="https://ethantomb.github.io/collapse" target="_blank">Winding Roads</a>
+                    <p>
+                        Winding Roads is a canvas generator that uses a wave-function collapse algorithm to create a
+                        visually appealing and logically connected image. The generator takes a set of road sprites and
+                        places them onto a grid, ensuring that every road is connected to at least one other road. The
+                        end
+                        result is a complete image that looks aesthetically pleasing and fits together like a puzzle.
+                        <br><b>Written in JavaScript</b>
+                    </p>
+                    <a href="https://github.com/ethantomb/collapse" target="_blank">View The Source Code.</a>
+                </div>
+                <div class="proj-img imgRight">
+                    <img src = "./assets/img/wRoadsSquare2.png">
+                </div>
             </div>
-            <div class="project" id="project5">
-                <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Robotics Project -
-                    Fundamentals of Engineering
-                    Honors</a>
-                <p>
-                    For a semester-long project, my team and I designed and built a robot from scratch, including
-                    programming and testing it. Our hard work paid off when we placed in the top 16 out of 64 teams in
-                    the final classwide tournament. You can see a model of our robot below.
-                    <br><b>Modeled in SolidWorks. Written in C++ With the <a href="https://u.osu.edu/fehproteus/">FEH
-                            Proteus
-                            Library</a>.</b>
-                </p>
+            <div class="project" id="project5"style="display:none;">
+                <div class="proj-img imgLeft">
+                    <img src = "./assets/img/robotProjSquare1.png">
+                </div>
+                <div class="proj-main">
+                    <a href="https://github.com/ethantomb/FEH22-Robotics_Project-E1" target="_blank">Robotics Project -
+                        Fundamentals of Engineering
+                        Honors</a>
+                    <p>
+                        For a semester-long project, my team and I designed and built a robot from scratch, including
+                        programming and testing it. Our hard work paid off when we placed in the top 16 out of 64 teams
+                        in
+                        the final classwide tournament. You can see a model of our robot below.
+                        <br><b>Modeled in SolidWorks. Written in C++ With the <a
+                                href="https://u.osu.edu/fehproteus/">FEH
+                                Proteus
+                                Library</a>.</b>
+                    </p>
+                </div>
+                <div class="proj-img imgRight">
+                    <img src = "./assets/img/robotProjSquare2.png">
+                </div>
             </div>
         </div>
 
@@ -178,9 +239,10 @@
         <p class="desktopInstructions">Desktop Instructions</p>
         <ul class="desktopInstructions">
             <li>Left click to pan, Right click to drag, and use the scroll wheel or trackpad to zoom.</li>
-            <li>If the model runs slowly, go to chrome://settings, search "Use Hardware Acceleration" and turn it on.</li>
-        </ul> 
-        <label for = "FPSCap" id = "currentFPSCap">FPS Limit: 45 FPS</label>
+            <li>If the model runs slowly, go to chrome://settings, search "Use Hardware Acceleration" and turn it on.
+            </li>
+        </ul>
+        <label for="FPSCap" id="currentFPSCap">FPS Limit: 45 FPS</label>
         <input type="range" id="FPSCap" name="FPSCap" min="1" max="144" value="45">
     </div>
     <script type="module" src="./scripts/3d.js"></script>

@@ -221,6 +221,10 @@ body{
   }
   /*Mobile*/
   @media (max-aspect-ratio: 1/1) {
+    .proj-img{
+        /*I simply cannot be bothered.*/
+        opacity: 0%;
+    }
     .body-content {
       flex-direction: column;
     }
@@ -351,8 +355,30 @@ body{
     flex-direction: column;
     margin-top:1vmin;
 }
-
 .project{
+    display:none;
+    position:relative;
+    flex-direction: row;
+    align-items:center;
+}
+.proj-img{
+    display:block;
+    position:relative;
+}
+.imgLeft{
+    margin-right:2.5%;
+    right:100%;
+}
+.imgRight{
+    margin-left:2.5%;
+    left:100%;
+}
+.proj-img>img{
+    aspect-ratio:1;
+    width:50vmin;
+
+}
+.proj-main{
     aspect-ratio: 7/4;
     padding:10px;
     color:#000000;
@@ -363,25 +389,26 @@ body{
     border:5px solid #e15c5c;
     border-radius: 5px;
     word-wrap:break-word;
-    display:none;
+    
     position:relative;
     animation-fill-mode: forwards;
+    z-index:1;
 }
-.project>a{
+.proj-main>a{
     text-align:center;
     display: block;
     color: #ffffff;
     padding: 14px 16px;
     background-color: #828282;
 }
-.project>a:hover{
+.proj-main>a:hover{
     background-color: #691515;
 }
-.project > p{
+.proj-main > p{
     background-color:#fefefe;
     opacity:0.9;
 }
-.project > ul{
+.proj-main > ul{
     background-color:#fefefe;
     opacity:0.9;
 }

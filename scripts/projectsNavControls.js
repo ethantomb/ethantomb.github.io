@@ -4,21 +4,52 @@ var lastActive = 1;
 
 $(document).ready(function () {
     allProjects = $.makeArray($(".projects-container").children());
-    updateProjects(true);
+    updateProjects(1,true);
+    //Prerun the animation at supervisual speed, first time it runs it looks glitch
+    for(let i=0;i<allProjects.length-1;i++){
+      currentIndex++;
+      updateProjects(1);
+    }
+    for(let i=0;i<allProjects.length-1;i++){
+      currentIndex--;
+      updateProjects(1);
+    }
 });
 
-function updateProjects(firstTime=false) {
+function updateProjects(len,firstTime=false) {
     if (allProjects) {
       if(!firstTime){
-        $(`#project${lastActive}`).slideUp(500, function() {
-          $(this).hide();
+        /**
+         * Hide the previous project
+         */
+        $(`#project${lastActive}`).slideUp(len*(3/2), function() {
+          l=$(this).children(".imgLeft");
+          r=$(this).children(".imgRight");
+          l.animate({right:"100%"});
+          r.animate({left:"100%"});
+          
+          $(this).css("display","none");
+          
         });
-        $(`#project${currentIndex}`).slideDown(500, function() {
-          $(this).show();
+        /**
+         * Show the current project
+         */
+        $(`#project${currentIndex}`).slideDown(len, function() {
+          l=$(this).children(".imgLeft");
+          r=$(this).children(".imgRight");
+          l.css("display","block");
+          r.css("display","block");
+          $(this).css("display","flex");
+          l.animate({right:"0%"});
+          r.animate({left:"0%"});
         });
         lastActive = currentIndex;
       }else{
-        $(`#project${currentIndex}`).show();
+        l=$(`#project${currentIndex}`).children(".imgLeft");
+        r=$(`#project${currentIndex}`).children(".imgRight");
+        $(`#project${currentIndex}`).css("display","flex");
+        l.animate({right:"0%"});
+        r.animate({left:"0%"});
         lastActive = currentIndex;
       }
       $("#currentSelected").text(`${currentIndex + 1}/${allProjects.length}`);
@@ -36,7 +67,7 @@ function navigate(dir) {
                 } else if (currentIndex == allProjects.length - 2) {
                     document.getElementById("btn_next").disabled = false;
                 }
-                updateProjects();
+                updateProjects(500);
             }
             break;
         case "next":
@@ -48,7 +79,7 @@ function navigate(dir) {
                 } else if (currentIndex == 1) {
                     document.getElementById("btn_prev").disabled = false;
                 }
-                updateProjects();
+                updateProjects(500);
             }
     }
 }
