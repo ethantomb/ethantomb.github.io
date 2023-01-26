@@ -103,30 +103,31 @@
         <div class="body-content">
             <h1>...In Progress (Expect an update by 1/27/23)</h1>
             <h2>Check out <a href="/projects.html">My Projects!</a></h2>
-        </div>
-    </section>
-    <div class="game-container">
+            <div class="game-container">
 
 
-        <div class="gameBoard">
-            <canvas id="tttBoard" style="aspect-ratio:1/1;"></canvas>
-        </div>
-        <div class="game-control">
-            <h3 id="game_status"></h3>
-            <div class="game-chooseXO">
-                <div>
-                    <label class="RadioLabel">Play X</label>
-                    <input type="radio" name="player" value="X" checked>
+                <div class="gameBoard">
+                    <canvas id="tttBoard" style="aspect-ratio:1/1;"></canvas>
                 </div>
-                <div>
-                    <label class="RadioLabel">Play O</label>
-                    <input type="radio" name="player" value="O"> <br>
+                <div class="game-control">
+                    <h3 id="game_status"></h3>
+                    <div class="game-chooseXO">
+                        <div>
+                            <label class="RadioLabel">Play X</label>
+                            <input type="radio" name="player" value="X" checked>
+                        </div>
+                        <div>
+                            <label class="RadioLabel">Play O</label>
+                            <input type="radio" name="player" value="O"> <br>
+                        </div>
+                    </div>
+        
+                    <button id="reset" onclick="reset()">Start!</button>
                 </div>
             </div>
-
-            <button id="reset" onclick="reset()">Start!</button>
         </div>
-    </div>
+    </section>
+   
 </body>
 
 </html>
