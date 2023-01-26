@@ -1,5 +1,5 @@
 var currentSection = 0;
-var sections = ['#section1', '#section2'];
+var sections = ['#section1', '#section2','#section3','#section4'];
 var scrolling=false;
 $(document).on('mousewheel DOMMouseScroll', function(event) {
   if(!scrolling) {
@@ -36,17 +36,15 @@ $(document).on('mousewheel DOMMouseScroll', function(event) {
   }
   
   scrolling=true;
-  scrollToSection(sections[currentSection],function(){
+  scrollToSection(sections[currentSection]);
+  setTimeout(function(){
     scrolling=false;
-  });
+  },750);
 }
 });
-function scrollToSection(section,callback) {
+function scrollToSection(section) {
     $('html, body').animate({
       scrollTop: $(section).offset().top
     }, 1000);
-    if(callback){
-        callback();
-    }
   }
   

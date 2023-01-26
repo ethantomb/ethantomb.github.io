@@ -6,9 +6,8 @@ body{
     font-size: 20px;
     
     margin:0px;
-    margin-left: 8.5%;
-    margin-right:8.5%;
     background-color: #fafeea;
+    overflow-x: hidden;
 }
 
 .header-box{
@@ -142,21 +141,81 @@ body{
     height:100vh;
     width: 100%;
     display:flex;
+    flex-direction:column;
     justify-content: space-between;
     align-items:center;
 }
-#contentP{
-    background-color:#dedede;
-    padding:5%;
+#section2{
+    position:relative;
+    color:#fff;    
+}
+#section3{
+    background-color:#313131;
+    color:#fafeea;
+}
+.bubble::after{
+    content: '';
+    background-color:#313131;
+    border-top-left-radius:50% 80%;
+    border-top-right-radius:50% 80%;
+    position: absolute;
+    bottom:0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.welcome-banner{
+    position:relative;
+    text-align:center;
+    height:100%;
+    width:100%;
+}
+.welcome-banner>h1{
+    position:absolute;
+    text-align:center;
+    top:25%;
+    width:100%;
+}
+.welcome-banner>p{
+    position:absolute;
+    text-align:center;
+    bottom:25%;
+    left:25%;
+    width:50%;
+}
+.about-me{
+    margin-left: 5%;
+    margin-right:5%;
+    width:90%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-start;
     
-    width: 50vmin;
-    aspect-ratio: 5/7;
+}
+.about-subsection{
+    width:30%;
+    text-align:center;
+}
+.about-subsection>h3>svg{
+    height:1.17em;
+    width:auto;
+    
+}
+.blue{
+    background-color: #7496fe;
+    z-index:-2;
+}
+.half-height{
+    height:50vh;
 }
 /*PC*/
 @media (min-aspect-ratio: 1/1) {
+    /*
     .body-content {
       flex-direction: row;
     }
+    */
   }
   /*Mobile*/
   @media (max-aspect-ratio: 1/1) {
@@ -165,6 +224,13 @@ body{
     }
     #contentP{
         width:100%;
+    }
+    .about-me{
+        flex-direction:column;
+    }
+    .about-subsection{
+        width:100%;
+        text-align:left;
     }
     
   }
@@ -330,10 +396,7 @@ body{
     .mobileInstructions{
         display:block;
     }
-    body{
-        margin-left: 5%;
-        margin-right:5%;
-    }
+    
     .desktopInstructions{
         display:none;
     }
