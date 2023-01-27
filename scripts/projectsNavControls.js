@@ -24,11 +24,13 @@ function updateProjects(len,firstTime=false) {
          */
         let l=$(`#project${lastActive}`).children(".imgLeft");
         let r=$(`#project${lastActive}`).children(".imgRight");
-        l.animate({right:"-100%"});
-        r.animate({left:"-100%"});
+        l.animate({right:"-100%",opacity:"0%"},500,"linear");
+        r.animate({left:"-100%",opacity:"0%"},500,"linear");
+        
         
         $(`#project${lastActive}`).slideUp(len, function() {
-         
+          l.css("opacity","0%");
+          r.css("opacity","0%");
           $(this).css("display","none");
           
         });
@@ -43,9 +45,12 @@ function updateProjects(len,firstTime=false) {
           r=$(`#project${currentIndex}`).children(".imgRight");
           l.css("display","block");
           r.css("display","block");
-          l.animate({right:"0%"});
-          r.animate({left:"0%"});
+          l.animate({opacity:"100%",right:"0%"});
+          r.animate({opacity:"100%",left:"0%"});
+          l.css("opacity","100%");
+          r.css("opacity","100%");
         });
+
         lastActive = currentIndex;
       }else{
         l=$(`#project${currentIndex}`).children(".imgLeft");
@@ -53,6 +58,8 @@ function updateProjects(len,firstTime=false) {
         $(`#project${currentIndex}`).css("display","flex");
         l.animate({right:"0%"});
         r.animate({left:"0%"});
+        l.css("opacity","100%");
+        r.css("opacity","100%");
         lastActive = currentIndex;
       }
       $("#currentSelected").text(`${currentIndex + 1}/${allProjects.length}`);

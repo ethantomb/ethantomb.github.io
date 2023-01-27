@@ -9,7 +9,6 @@ body{
     background-color: #fafeea;
     overflow-x: hidden;
 }
-
 .header-box{
     display:flex;
     justify-content:center;
@@ -79,9 +78,10 @@ body{
     overflow: hidden;
 }
 .nav_element{
-    height: 45px;
+    aspect-ratio:2;
+    height: 4rem;
     margin:0;
-    padding: 15px 30px;
+    
     display:flex;
     align-items:center;
 }
@@ -90,6 +90,8 @@ body{
     color: #ffffff;
     text-align: center;
     text-decoration: none;
+    width:100%;
+    height:100%;
 }
 .navImg {
     margin:0;
@@ -138,6 +140,7 @@ body{
     width: 100%;
 }
 .body-content{
+
     min-height:100vh;
     width: 100%;
     display:flex;
@@ -145,15 +148,113 @@ body{
     justify-content: space-between;
     align-items:center;
 }
+/**/
+.custom-shape-divider-bottom-1674850385 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1674850385 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 72px;
+}
+
+.custom-shape-divider-bottom-1674850385 .shape-fill {
+    fill: #FE9E74;
+}
+/**/
+.custom-shape-divider-top-1674850448 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1674850448 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 72px;
+}
+
+.custom-shape-divider-top-1674850448 .shape-fill {
+    fill: #e3855d;
+}
+/**/
+.custom-shape-divider-top-1674849912 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+/**/
+.custom-shape-divider-bottom-1674850601 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1674850601 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 72px;
+}
+
+.custom-shape-divider-bottom-1674850601 .shape-fill {
+    fill: #ED6A57;
+}
+/**/
+.custom-shape-divider-top-1674850642 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1674850642 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 72px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1674850642 .shape-fill {
+    fill: #ED5757;
+}
+/**/
 #section2{
     position:relative;
     color:#fff;    
 }
 #section3{
-    background-color:#313131;
     color:#fafeea;
-    height:125%;
+    height:150%;
+    position: relative;
 }
+#section4{
+    position:relative;
+    color:#fff;
+}
+
 .bubble::after{
     content: '';
     background-color:#313131;
@@ -204,12 +305,40 @@ body{
     width:auto;
     
 }
-.blue{
-    background-color: #7496fe;
+
+.red{
+    background-color: #fe7474;
+   
+}
+.orange{
+    background-color: #fe9e74;
     z-index:-2;
 }
+.yellow{
+    background-color: #fefe74;
+    z-index:-2;
+}
+.green{
+    background-color: #74fe9e;
+    z-index:-2;
+}
+.blue{
+    background-color: #74d4fe;
+    z-index: -2;
+}
+.purple{
+    background-color: #b074fe;
+}
+
 .half-height{
     height:50vh;
+}
+.education-skills{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width:80%;
 }
 /*PC*/
 @media (min-aspect-ratio: 1/1) {
@@ -237,6 +366,9 @@ body{
     .about-subsection{
         width:100%;
         text-align:left;
+    }
+    .education-skills{
+        flex-direction:column;
     }
     
   }
@@ -379,6 +511,7 @@ body{
     position:relative;
     aspect-ratio:1;
     width:22.5%;
+    background-color: #979393;
 }
 .imgLeft{
     margin-right:2.5%;
@@ -392,11 +525,14 @@ body{
     width:100%;
 
 }
+button:enabled{
+    cursor:pointer;
+}
 .proj-main{
     aspect-ratio: 7/4;
     padding:10px;
     color:#000000;
-    background-image:linear-gradient(135deg,#fd0000 0%,#fd3737 25%, #7928e9 75%,#ffffff 100%);
+    /*background-image:linear-gradient(135deg,#fd0000 0%,#fd3737 25%, #7928e9 75%,#ffffff 100%);*/
     width:50%;
     justify-content:center;
     justify-self: center;
